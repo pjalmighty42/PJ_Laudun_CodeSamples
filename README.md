@@ -1,4 +1,4 @@
-# PJ_Landon_CodeSamples
+# PJ Landon CodeSamples
 This is an ongoing repository of code samples for my portfolio.
 
 In this repository you will find code samples using:
