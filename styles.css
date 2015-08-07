@@ -1,0 +1,601 @@
+@charset "utf-8";
+/**************************************
+*  E-Commerce Sample site
+*  Created by, PJ Landon @2015
+**************************************/
+
+*{
+	box-sizing:border-box;
+}
+
+/*************************************** Main Containers */
+.mainStyle
+{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:100;
+	color:#999;
+}
+
+#mainID
+{
+	width:100%;
+	height:100%;
+	background-color:#E4F1FB;
+}
+
+#mainContainer
+{
+	position:absolute;
+	top:20%;
+	left:10%;
+	height:75%;
+	width:80%;
+}
+
+#mainBackground
+{
+	position:relative;
+	top:-3%;
+	height:100%;
+	width:100%;
+	background: url(../IMG/BackgroundGradient.png) repeat-y;
+	z-index:-4;
+}
+
+/**************** Horizontal Rule w/ Logo */
+
+#hrRule1
+{
+	position:absolute;
+	top:98%;
+}
+
+#hrRule2
+{
+	position:absolute;
+	top:168.4%;
+}
+
+.hrLogo
+{
+	position:inherit;
+	left: 10%;
+	opacity:0.7;
+}
+
+
+
+/*************************************** Header */
+/**************** Logo */
+#logo
+{
+	position:absolute;
+	top:2%;
+	left:5%;
+	background-color:#B3EED3;
+	height:150px;
+}
+
+#logoIMG
+{
+	position:relative;
+	top:30%;
+}
+
+#logo:hover
+{
+	background-color:#E2FCF0;
+	box-shadow: 0px 0px 1px 1px #666666;
+}
+
+/**************** Menu Bar */
+
+#menuContainer
+{
+	position:absolute;
+	top:5%;
+	left:47.5%;
+	width:650px;
+	height:auto;
+}
+
+
+ul#menu
+{
+	position:relative;
+	padding:0;
+	top:11%;
+	left:0.5%;
+}
+
+ul#menu li
+{
+	display:inline;
+	padding:0;
+}
+
+ul#menu li a
+{
+	background-color:#82D8B1;
+	color:#666;
+	text-decoration:none;
+	padding:4% 5% 4% 5%;
+	margin-left:-4px;
+	text-align:center;
+	box-shadow: 0px 0px 1px 1px #666666;
+}
+ul#menu li a:hover
+{
+	background-color:#E2FCF0;
+	color:#999;
+}
+
+
+/**************** Social Media Bar */
+
+#socialMediaContainer
+{
+	position:absolute;
+	top:10%;
+	left:78.5%;
+	width:205px;
+	height:auto;
+	
+}
+
+ul#socMediaMenu
+{
+	position:relative;
+	padding:0;
+	top:11%;
+	left:0;
+	
+}
+
+ul#socMediaMenu li
+{
+	display:inline;
+	padding:0;
+}
+
+ul#socMediaMenu li a 
+{
+	text-decoration:none;
+	padding:0.5%;
+	margin-left:-4px;
+	text-align:center;
+}
+
+/**************** Main Content */
+
+#whiteBackgrnd
+{
+	position:absolute;
+	width:95%;
+	height:97%;
+	left:3%;
+	top:2%;
+	background-color:#FFF;
+	z-index:-10;
+}
+
+#mainContTitle
+{
+	position:relative;
+	left:43%;
+	width:60%;
+}
+
+#mainContPic
+{
+	position:relative;
+	width:78%;
+	height: 74%;
+	left:8%;
+	top:3%;
+	box-shadow: 0px 0px 20px 1px #666666;
+	z-index:0;
+}
+
+/**************** Picture Info */
+
+.picInfoDescrText
+{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:100;
+	color:#333;
+}
+
+
+#picInfoTitle
+{
+	position:absolute;
+	background-color:#82D8B1;
+	box-shadow: 0px 0px 20px 1px #666666;
+	width:750px;
+	height:10%;
+	left:7.5%;
+	top:85%;
+	z-index:0;
+}
+
+#picInfoTitle:hover
+{
+	background-color:#CCF6E3;
+}
+
+#picInfoTitle h2
+{
+	position:relative;
+	text-align:left;
+	margin-left:5%;
+}
+
+#picInfoDescr
+{
+	position:absolute;
+	background-color:#9CC4E0;
+	width:1070px;
+	height:auto;
+	left:7.5%;
+	top: 62.5%;
+	z-index:1;
+}
+
+#picInfoDescr h3
+{
+	text-align:left;
+	margin-left:5%;
+}
+
+#picInfoDescr p
+{
+	text-align:center;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+#picInfoDescr h4
+{
+	text-align:right;
+	margin-right:5%;
+}
+
+/**************** Main Page - Tabs */
+
+#mainPageP2
+{
+	position:absolute;
+	background-color:#FFF;
+	width:100%;
+	height:70%;
+	z-index:-5;
+	top:99%;
+}
+
+.tabBodyText
+{
+	font-size:1.25em;
+}
+
+/**************** Tabs - Tab1 */
+
+#mainPageP2 #tab1
+{
+	position:absolute;
+	width:90%;
+	height:70%;
+	z-index:1;
+	top:20%;
+	left:5%;
+}
+
+#mainPageP2 #tab1 #tab1Header1
+{
+	position:absolute;
+	top:-10%;
+	background-color:#9CC4E0;
+	width:33%;
+	height:20%;
+	border-radius: 15px 15px 0 0;
+}
+
+#mainPageP2 #tab1 #tab1Header1:hover
+{
+	background-color:#E4F1FB;
+}
+
+#mainPageP2 #tab1 #tab1Header1 h2
+{
+	position:relative;
+	padding: 1% 0 1% 0;
+	left:5%;
+}
+
+#tab1Content
+{
+	position:absolute;
+	width:100%;
+	height:90%;
+	top:5.8%;
+	background-color:#cde4f5;
+}
+
+#tab1Content #tab1ContL
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	top:5%;
+}
+
+#tab1Content #tab1ContR
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	left:50%;
+	top:5%;
+}
+
+/**************** Tabs - Tab2 */
+
+#mainPageP2 #tab2
+{
+	position:absolute;
+	width:90%;
+	height:70%;
+	z-index:0;
+	top:20%;
+	left:5%;
+}
+
+#mainPageP2 #tab2 #tab2Header2
+{
+	position:absolute;
+	top:-10%;
+	left:33%;
+	background-color:#9BE4C3;
+	width:34%;
+	height:20%;
+	border-radius: 15px 15px 0 0;
+}
+
+#mainPageP2 #tab2 #tab2Header2:hover
+{
+	background-color:#E2fcf0;
+}
+
+#mainPageP2 #tab2 #tab2Header2 h2
+{
+	position:relative;
+	padding: 1% 0 1% 0;
+	left:5%;
+}
+
+#tab2Content
+{
+	position:absolute;
+	width:100%;
+	height:90%;
+	top:5.8%;
+	background-color:#CCF6E3;
+}
+
+#tab2Content #tab2ContL
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	top:5%;
+}
+
+#tab2Content #tab2ContR
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	left:50%;
+	top:5%;
+}
+
+/**************** Tabs - Tab3 */
+
+#mainPageP2 #tab3
+{
+	position:absolute;
+	width:90%;
+	height:70%;
+	z-index:0;
+	top:20%;
+	left:5%;
+}
+
+#mainPageP2 #tab3 #tab3Header3
+{
+	position:absolute;
+	top:-10%;
+	left:67%;
+	background-color:#CCF6A7;
+	width:33%;
+	height:20%;
+	border-radius: 15px 15px 0 0;
+}
+
+#mainPageP2 #tab3 #tab3Header3:hover
+{
+	background-color:#F0FEE5;
+}
+
+#mainPageP2 #tab3 #tab3Header3 h2
+{
+	position:relative;
+	padding: 1% 0 1% 0;
+	left:5%;
+}
+
+#tab3Content
+{
+	position:absolute;
+	width:100%;
+	height:90%;
+	top:5.8%;
+	background-color:#E5FCD1;
+}
+
+#tab3Content #tab3ContL
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	top:5%;
+}
+
+#tab3Content #tab3ContR
+{
+	position:absolute;
+	padding:2%;
+	width:50%;
+	left:50%;
+	top:5%;
+}
+
+
+/**************** Main Page - Footer */
+
+#mainFooter
+{
+	position:absolute;
+	background-color:#E5FCD1;
+	width:100%;
+	height:50%;
+	z-index:-4;
+	top:169%;
+}
+
+#mainFooter #siteMapCont
+{
+	position:relative;
+	background-color:#F0FEE5;
+	width:100%;
+	height:80%;
+	z-index:-5;
+	top:0%;
+}
+
+#mainFooter h3
+{
+	position:relative;
+	top:-1%;
+	left:5%;
+}
+
+/**************** Main Page - Footer - Drop Down Bar */
+
+nav
+{
+	position:absolute;
+	
+	width:25%;
+	height:auto;
+	left: 70%;
+	top: 3%;
+}
+
+nav ul
+{
+	background:#CDE4F5;
+	position:inherit;
+	width:100%;
+	display:inline-table;
+	list-style:none;
+}
+
+nav ul:after
+{
+	clear:both;
+	display:block;
+}
+
+nav ul li
+{
+	float:left;
+	position:relative;
+	left:-10%;
+	width:100%;
+	padding:2%;
+	text-decoration:none;
+}
+
+nav ul li:hover
+{
+	background:#9CC4E0;
+	color:#666;
+	width:100%;
+	display:block;
+	padding: 3% 5%;
+	color:#666;
+	text-decoration:none;
+}
+
+nav ul ul
+{
+	display:none;
+	float:left;
+	position:absolute;
+	top:100%;
+	width:100%;
+	left:0;
+}
+
+nav ul li:hover > ul
+{
+	display:block;
+}
+
+nav ul ul
+{
+	position:inherit;
+	width:100%;
+	left:15%;
+	padding: 2% 0 2% 0;
+	color:#666;
+}
+
+nav ul ul:hover
+{
+	background:#9CC4E0;
+	position:inherit;
+	width:100%;
+}
+
+/**************** Main Page - Footer - Images */
+
+#GearContainer
+{
+	position:relative;
+	width:90%;
+	height: 85%;
+	box-shadow: 0px 0px 20px 1px #666666;
+	left:5%;
+	top:8%;
+}
+
+#GearContainer img
+{
+	position:relative;
+	padding:2% 5% 2% 5%;
+	top:2%;
+	left:5%;
+	clear:both;
+}
+
+.gear
+{
+	display:inline-block;
+}
+
+.mens, .womens, .hardware
+{
+	display:none;
+}
