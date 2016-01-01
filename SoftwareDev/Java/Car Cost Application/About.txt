@@ -1,0 +1,24 @@
+This is an application that I developed as off-shoot of my Udacity Nanodegree program.
+
+This application will take in various values, like:
+
+- Miles that will be driven for both cars
+- Car 1 & 2's Miles Per Gallons (MPG)
+- Car 1 & 2's Purchase Costs
+- Price Per Gallon (or gas costs)
+
+It will then take all of this information and give out Car 1 & 2's Total Cost. Once that is figured out, it will help you decide which car will cost less to own. 
+
+This application has two classes, the Main and the Car, class. The Car class has two Constructors all the Accessors needed to be able to create the Car objects for the application.
+
+Constructors includes:
+- 1 Constructor that will pass in the: Miles Driven, MPG, PPG, and Purchase Cost
+- 1 Constructor that sets; Miles Driven, MPG, PPG, and Purchase Cost, to Zero.
+
+Accessors includes:
+- All the Getter functions to grab the; Miles Driven, MPG, PPG, and Purchase Cost, values.
+- As well as the TotalCost function that will do the Math needed and then will give back the Total Cost values for both cars.
+
+Tested, refactored, and all the code works perfectly!
+
+- PJ
