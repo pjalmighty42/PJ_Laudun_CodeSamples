@@ -1,0 +1,7 @@
+This is a bare-bones Database program programmed in Java. It does not have a User Interface and only outputs via the console.
+
+The data base used is Apache Derby. 
+
+This version has a local database already set up that has the fields; id, first name, last name, and job title. I had inputted 4 people into the database. This connector script was able to not only work flawlessly, but was able to pull out all of the workers, their id's, and their job titles, in the Console. 
+
+I have included a picture of the end result and the class.
