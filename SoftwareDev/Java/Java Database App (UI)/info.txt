@@ -10,3 +10,6 @@ There are two folders in this folder:
 - UIDatabase: This folder will have the completed, wrapped, and compiled, EXE file. If you have a Windows OS, you could open this up to install it on your PC to show the finished result.
 
 Thank you and enjoy.
+
+Updates:
+3/10/2016 - Refactored the Workers.java file so that it is more compact and extensible.
