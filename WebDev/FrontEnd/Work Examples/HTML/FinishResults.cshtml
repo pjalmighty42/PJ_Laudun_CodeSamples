@@ -1,0 +1,434 @@
+<!--
+    Sitecore using statements.
+    Redacted for demo purposes
+-->
+
+<!--Finish Results Page Start-->
+<div class="row fz-container">
+
+    <!--Sidebar Links-->
+    <div class="col-xs-12 col-sm-12 col-md-4 fz-sidebar">
+        <a onclick="smoothScroll('#race-results')" class="btn col-xs-3 col-sm-3 col-md-12 resultsbtn">
+            <i class="fa fa-clock-o results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Results</span>
+        </a>
+        <a onclick="smoothScroll('#race-photos')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-picture-o results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Photos</span>
+        </a>
+        <a onclick="smoothScroll('#race-badges')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-certificate results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Earned Badges</span>
+        </a>
+        <a onclick="smoothScroll('#race-stats')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-line-chart results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Course Stats</span>
+        </a>
+        <a onclick="smoothScroll('#race-speedometer')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-clock-o results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Speedometer</span>
+        </a>
+        <a onclick="smoothScroll('#race-next')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-road results-icon" aria-hidden="true"></i>
+            <span class="sb-text">What's Next</span>
+        </a>
+        <a onclick="smoothScroll('#race-assessment')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-trophy results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Rock 'n' Roll Assessment</span>
+        </a>
+        <a onclick="smoothScroll('#race-cert')" class="btn col-xs-3 col-sm-3 col-md-12">
+            <i class="fa fa-certificate results-icon" aria-hidden="true"></i>
+            <span class="sb-text">Digital Certificate</span>
+        </a>
+    </div>
+
+    <!--Main Data-->
+    <div class="col-xs-12 col-sm-12 col-md-8 race-results-container">
+
+        <!--Racer Information Portion-->
+        <div id="racer-info" class="col-xs-12 col-sm-12">
+            <h2>Racer Information</h2>
+            <div class="col-sm-12 div-border">
+                <h3 class="row race-title">
+                    Latest Race Title
+                </h3>
+                <div class="row div-info">
+                    Race Date
+                </div>
+            </div>
+            <div class="col-sm-6 div-border">
+                <div class="row div-title">
+                    NAME
+                </div>
+                <div class="row div-info red-text">
+                    Racer Name
+                </div>
+            </div>
+            <div class="col-sm-6 div-border">
+                <div class="row div-title">
+                    BIB NUMBER
+                </div>
+                <div class="row div-info red-text">
+                    ####
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    GENDER
+                </div>
+                <div class="row div-info red-text">
+                    M/F
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    AGE
+                </div>
+                <div class="row div-info red-text">
+                    ##
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    HOMETOWN
+                </div>
+                <div class="row div-info red-text">
+                    City, State, Country
+                </div>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block red-btn">Share Your Story >></a>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block no-bg-btn">Submit a Correction</a>
+            </div>
+        </div>
+
+        <!--Race Results Portion-->
+        <div id="race-results" class="col-xs-12 col-sm-12">
+            <h2>Race Results</h2>
+            @*
+                    Here for future usage
+
+                    <div class="col-sm-12 button-div">
+                    <select class="custom-select custom-select-lg btn-block">
+                        <option selected>-- Select a Race --</option>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <option value="race + @i">Race @i</option>
+                        }
+                    </select>
+                </div>*@
+            <div class="col-sm-6 div-border button-div">
+                <div class="row div-title">
+                    Finish Time
+                </div>
+                <div class="row div-info red-text">
+                    HH:MM:SS
+                </div>
+            </div>
+            <div class="col-sm-6 div-border button-div">
+                <div class="row div-title">
+                    Pace Time
+                </div>
+                <div class="row div-info red-text">
+                    HH:MM:SS
+                </div>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block red-btn nxt-year-btn">Sign up for Next Year >></a>
+            </div>
+            <div class="col-sm-12 div-border">
+                <h3>Overall Race Results</h3>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Pace
+                </div>
+                <div class="row div-info red-text">
+                    HH:MM:SS
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Chip Time
+                </div>
+                <div class="row div-info red-text">
+                    HH:MM:SS
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Clock Time
+                </div>
+                <div class="row div-info red-text">
+                    HH:MM:SS
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Overall
+                </div>
+                <div class="row div-info red-text">
+                    XXXX/XXXX
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Division
+                </div>
+                <div class="row div-info red-text">
+                    XXX/XXX
+                </div>
+            </div>
+            <div class="col-sm-4 div-border">
+                <div class="row div-title">
+                    Gender Ranking
+                </div>
+                <div class="row div-info red-text">
+                    XXXX/XXXX
+                </div>
+            </div>
+            <div class="col-sm-12 div-border">
+                <h3>Race Split Results</h3>
+            </div>
+            <div class="col-sm-12 div-border">
+                <h4>Pace</h4>
+            </div>
+            <!--
+                This part uses the Owl Carousel plugin, found here:
+                https://owlcarousel2.github.io/OwlCarousel2/
+            -->
+            <div class="col-sm-12 button-div div-border">
+                <div class="owl-carousel splits" data-options='{"items": 3, "navigation": true, "navigationText": ["<", ">"], "autoPlay": true }'>
+                    @for (int i = 0; i < 8; i++)
+                    {
+                        <div>
+                            <p class="split-num div-info">Split - ##</p>
+                            <p class="race-title red-text">HH:MM:SS.MSMS</p>
+                            <p class="div-title">(XX km)</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block red-btn dl-split-btn"><i class="fa fa-download" aria-hidden="true"></i> <span class="sb-text">Download Split Sheet</span></a>
+            </div>
+            <div class="col-sm-6 button-div div-border">
+                <figure class="btn-img-block">
+                    <img class="btn-img" />
+                </figure>
+                <a href="#race-assessment" class="red-grad-btn rnr-abtn">See Your Rock 'n' Roll Assessment</a>
+            </div>
+            <div class="col-sm-6 button-div div-border">
+                <figure class="btn-img-block">
+                    <img class="btn-img" />
+                </figure>
+                <a href="#race-badges" class="red-grad-btn see-badges-btn"> See Your Badges</a>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block no-bg-btn corr-btn">Submit a Correction</a>
+            </div>
+        </div>
+
+        <!--Racer Photos Portion-->
+        <div id="race-photos" class="col-xs-12 col-sm-12">
+            <h2>Photos</h2>
+            <div class="div-border col-sm-12">
+                <div class="row">
+                    <figure class="img-sponsor-block col-xs-9 col-sm-5 col-md-4">
+                        <img src="" class="photo-sponsor-img" />
+                    </figure>
+                </div>
+                <div class="row">
+                    <div class="photos-div">
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            <div class="photo-blocks col-xs-12 col-sm-4 col-md-2">
+                                <a class="btn btn-block">
+                                    <img class="photo-img" />
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 button-div">
+                <a class="btn btn-block no-bg-btn">View All Photos</a>
+            </div>
+        </div>
+
+        <!--Earned Badges Portion-->
+        <div id="race-badges" class="col-xs-12 col-sm-12">
+            <h2>Earned Badges</h2>
+            <div class="col-sm-12 div-border">
+                <h3 class="race-title">You Earned 8 Badges</h3>
+            </div>
+            @for (int i = 0; i < 8; i++)
+        {
+                <div class="col-sm-3 badge-div div-border">
+                    <div class="badge-img-div col-sm-12">
+                        <a class="btn">
+                            <img class="badge-img" />
+                        </a>
+                    </div>
+                    <a class="col-sm-12">
+                        <h3 class="div-info">
+                            Badge Name
+                        </h3>
+                    </a>
+                    <p class="col-sm-12 div-title">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                    </p>
+                    <div class="badge-sm-div col-sm-12">
+                        <a href="https://facebook.com" target="_blank" title="" class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" title="" class="btn btn-social-icon btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!--Course Stats Portion-->
+        <div id="race-stats" class="col-xs-12 col-sm-12">
+            <h2>Course Stats</h2>
+            <div class="div-border col-sm-12">
+                <div class="col-sm-12">
+                    <h3 class="race-title">You vs The Field</h3>
+                </div>
+                <div class="col-sm-12 stat-table">
+
+                </div>
+            </div>
+        </div>
+
+        <!--Speedometer Portion-->
+        <div id="race-speedometer" class="col-xs-12 col-sm-12">
+            <h2>Speedometer</h2>
+            <div class="div-border col-sm-12">
+                <div class="col-sm-12">
+                    <h3 class="race-title">How Fast were You Going?</h3>
+                </div>
+                <div class="col-sm-12 speed-table">
+
+                </div>
+            </div>
+        </div>
+
+        <!--What's Next Portion-->
+        <div id="race-next" class="col-xs-12 col-sm-12">
+            <h2>What's Next</h2>
+            @for (int i = 0; i < 3; i++)
+        {
+                <div class="next-container div-border col-sm-12 col-md-4">
+                    <div class="next-img-div-container">
+                        <div class="next-img-div col-xs-9 col-sm-5 col-md-12">
+                            <a class="btn btn-block">
+                                <img src="" class="next-img" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <h3>This is Next!</h3>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>
+                            Sed cursus ante dapibus diam. Sed nisi. Sed cursus ante dapibus diam. Sed nisi. Sed cursus ante dapibus diam. Sed nisi. Sed cursus ante dapibus diam. Sed nisi. Sed cursus ante dapibus diam. Sed nisi.Sed cursus ante dapibus diam. Sed nisi.
+                        </p>
+                    </div>
+                    <div class="col-sm-12">
+                        <a class="btn btn-block red-grad-btn">Register Text</a>
+                    </div>
+                </div>
+            }
+            <div class="tourpass-container div-border col-sm-12">
+                <div class="tp-img-div col-sm-5">
+                    <img class="tourpass-img" />
+                </div>
+                <div class="tp-info-div col-sm-7">
+                    <h3>Tourpass Title</h3>
+                    <p>
+                        Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                </div>
+                <div class="col-sm-12 learn-more-div">
+                    <a class="btn learn-more-btn red-grad-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Assessment Portion-->
+        <div id="race-assessment" class="col-xs-12 col-sm-12">
+            <h2>Rock 'n' Roll Assessment</h2>
+            <div class="ra-top-div div-border col-sm-12">
+                <div class="ra-img-div col-xs-12">
+                    <img class="ra-img col-xs-12 col-sm-6" />
+                </div>
+                <div class="col-sm-12">
+                    <p>You are a</p>
+                    <h3>Good Runner! (yay)</h3>
+                    <p>
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                </div>
+                <div class="col-sm-12 ra-sm-div">
+                    <a href="https://facebook.com" target="_blank" title="" class="btn btn-social-icon btn-facebook">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" title="" class="btn btn-social-icon btn-instagram">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            @for (int i = 0; i < 3; i++)
+        {
+                <div class="ad-div-container col-sm-12 div-border">
+                    <div class="ad-img-div-container">
+                        <div class="ad-img-div col-xs-10 col-sm-5 col-md-5">
+                            <img class="ad-img" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <h3>Advertisment Headline</h3>
+                        <p>
+                            Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        </p>
+                        <a class="btn learn-more-btn no-bg-btn">Learn More</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!--Certificate Portion-->
+        <div id="race-cert" class="col-xs-12 col-sm-12">
+            <h2>Finisher Certificate</h2>
+            <div class="cert-container div-border col-sm-12">
+                <div class="dl-div button-div col-sm-12">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </div>
+                <div class="cert-cb-div col-sm-12">
+                    <h3>Customize Your Digital Certificate</h3>
+                    <div class="cert-cb-sel-div col-sm-6">
+                        <input type="checkbox" value="include-results"> Race Results
+                    </div>
+                    <div class="cert-cb-sel-div col-sm-6">
+                        <input type="checkbox" value="include-badges"> Earned Badges
+                    </div>
+                    <div class="cert-cb-sel-div col-sm-6">
+                        <input type="checkbox" value="include-assessment"> Rock 'n' Roll Assessment
+                    </div>
+                    <div class="cert-cb-sel-div col-sm-6">
+                        <input type="checkbox" value="include-all"> All
+                    </div>
+                </div>
+                <div class="button-div col-sm-12">
+                    <a class="btn btn-block red-btn download-cert-btn">Download Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Finish Results Page End-->

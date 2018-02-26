@@ -1,0 +1,35 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.sidebar{
+    h4{
+        border-bottom:2px solid $red;
+        padding-bottom: 5%;
+        font-size:20px;
+        
+        a{
+            @include FadeBoldText($dark-red, 500, 10s, ease-in-out, 0);
+            @include FadeOpacityButton(0.8, 3s, ease-in-out, 0);
+        }
+
+        a:hover{
+            text-decoration:none;
+            @include FadeOpacityButton(1, 3s, ease-in-out, 0);
+            @include FadeBoldText($red, 700, 10s, ease-in-out, 0);
+        }
+    }
+
+    ul{
+        li{
+            a{
+                color:$text-color-hover;
+                opacity:0.8;
+                font-weight:500;
+            }
+            a:hover{
+                opacity:1;
+                font-weight:600;
+            }
+        }
+    }
+}

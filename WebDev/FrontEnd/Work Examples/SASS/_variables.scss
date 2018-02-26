@@ -1,0 +1,68 @@
+/*
+    Variables for the Rock n' Roll Racing page
+    Created by: Jay Leffue
+    Edited by: Paul Laudun
+*/
+
+/*Base Settings*/
+$red: #ee1c24;
+$dark-red: #c8244f;
+$text-color: #a5a5a5;
+$text-color-hover: #0e0e0e;
+$page-width:100vw;
+$base-em: 16px;
+$font-color-white:#fff;
+
+/*Navigation*/
+$header-background-color: #FFF; 
+$nav-text-size:14px;
+$nav-text-hover: $nav-text-size + 4px;
+$navbar-toggle-icon-bar-color: $red;
+$mega-menu-gradient-gray: to bottom, #fff 0, #fff 50%, #f2f2f2 51%, #f2f2f2 100%;
+
+/*Jumbotron*/
+$button-gradient:to bottom, #ee1c24 0, #ee1c24 50%, #d61920 51%, #d61920 100%;
+$button-gradient-hover:to bottom, #d61920 0, #d61920 50%, #ee1c24 51%, #ee1c24 100%;
+$jumbotron-btn-color: #fff;
+$jumbotron-text-decoration: none;
+$button-gradient-trans:left, rgba(0,0,0,0) 0%, rgba(5,5,5,0) 1%, rgba(255,255,255,0) 52%, rgba(0,0,0,0) 100%;
+
+/*Tempo*/
+/*Read More*/
+
+/*News*/
+$news-margin: auto auto 1.8px auto;
+$news-title: auto 2px auto auto;
+$bg-title-position: center center;
+$bg-media-after-color: transparent !important;
+$bg-media-after-img-col6: to top,rgba(0,0,0,.85) 15%,transparent 40%;
+$bg-media-after-img-col4: to top,rgba(0,0,0,.9) 15%,transparent 40%;
+$bg-media-hover-filter:progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand');
+$bg-media-hover-filter-string: "progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand')";
+$italic-news-types-transform: 0, -50%;
+$news-center-transform: -50%, -50%;
+$news-absolute-position-setting: absolute !important;
+$news-postion-50Per: 50% !important;
+$news-width : 992px;
+
+/*Event Filter*/
+$filter-font-color:#959595;
+$filter-border-color:#a9a9a9;
+$filter-btn-hover-bg:#a9aeb3;
+$filter-btn-hover-color:#585858;
+$filter-item-bg:#fff;
+$filter-item-hr:#d3d3d3;
+$filter-sel-bg-color:#2e384e;
+
+/*Footer*/
+$center-align-text: center;
+$footer-background-color: black;
+
+/*Social Media Stuffs*/
+$norm-btn-marginL:-21%;
+
+/*Hotels*/
+$sold-out-btn-bg: to bottom, #000 0, #000 50%, #222 51%, #222 100%;
+
+/*Concert Series*/
+$race-details-btn-bg: to bottom, #959595 0, #959595 50%, #7b7b7b 51%, #7b7b7b 100%;

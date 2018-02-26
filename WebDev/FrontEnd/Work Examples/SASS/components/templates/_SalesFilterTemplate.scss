@@ -1,0 +1,17 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.sales-filter-container {
+    @media(max-width:767px){
+        border:1px solid $red;
+        padding:0;
+        margin-bottom:4%;
+        height:initial;
+    }
+    @media(min-width:768px){
+        border:1px solid $red;
+        padding:0;
+        margin-bottom:4%;
+        height:4em;
+    }
+}

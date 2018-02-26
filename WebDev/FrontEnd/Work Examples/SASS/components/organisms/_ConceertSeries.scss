@@ -1,0 +1,209 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.concert-series-container{
+    .concert-series-div-main{
+        .concert-series-sponsor{
+            display:flex;
+            justify-content:center;
+            .concert-series-img{
+                @media(max-width:449px){
+                    width: 100%;
+                    height: 5em;
+                    background-color:$filter-border-color;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                @media(min-width:450px) and (max-width:959px){
+                    width: 50%;
+                    height: 5em;
+                    background-color:$filter-border-color;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                @media(min-width:960px){
+                    width: 30%;
+                    height: 5em;
+                    background-color:$filter-border-color;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                
+            }
+        }
+        .concert-series-text-div{
+            border-bottom:1px solid $filter-border-color;
+            text-align:center;
+            h3{
+                font-size: 24px;
+                font-weight:700;
+                margin-bottom:2%;
+            }
+        }
+        .concert-series-info-div{
+            margin-top:2%;
+            p{
+                font-size:18px;
+            }
+        }
+        .concert-series-btn-lb{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            @media(max-width:639px){
+                li{
+                    p{
+                        font-size:18px;
+                        text-align:center;
+                        font-weight:500;
+                    }
+                    width: 50%;
+                    margin-right:2%;
+                    list-style: none;
+                    text-transform:uppercase;
+                }
+            }
+            @media(min-width:640px) and (max-width:959px){
+                li{
+                    p{
+                        font-size:18px;
+                        text-align:center;
+                        font-weight:500;
+                    }
+                    width: 25%;
+                    margin-right:2%;
+                    list-style: none;
+                    text-transform:uppercase;
+                }
+            }
+            @media(min-width:960px){
+                li:first-child{
+                    width: 10%;
+                }
+                li{
+                    p{
+                        font-size:18px;
+                        text-align:center;
+                        font-weight:500;
+                    }
+                    width: 15%;
+                    margin-right:2%;
+                    list-style: none;
+                    text-transform:uppercase;
+                }
+            }
+            
+        }
+
+        .musician-panel-div{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+             .musician-panel{
+                @media(max-width:639px){
+                    width:80%;
+                    margin:2%;
+                    padding:0;
+                    background-color:#fff;
+                }
+                @media(min-width:640px) and (max-width:959px){
+                    width:40%;
+                    margin:2%;
+                    padding:0;
+                    background-color:#fff;
+                }
+                @media(min-width:960px){
+                    width:28%;
+                    margin:2%;
+                    padding:0;
+                    background-color:#fff;
+                }
+                
+                .musician-img-div{
+                    width:100%;
+                    height:320px;
+                    padding:0;
+                    background-color:$filter-border-color;
+                    .musician-img{
+                        width:100%;
+                        height:100%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+                .musician-info-div{
+                    text-align:center;
+                    padding: 2% 7%;
+                    h3{
+                        font-weight:500;
+                        border-bottom:1px solid $filter-border-color;
+                        padding-bottom: 5%;
+                    }
+                    p{
+                        font-size: 16px;
+                        display: inline-block;
+                        width: 50%;
+                    }
+                }
+                .panel-btn-div{
+                    padding: 2% 8%;
+                    display: table;
+                    width: 100%;
+                    margin-bottom:2%;
+                    .hl-info-btn,
+                    .hl-race-details-btn{
+                         @media(max-width:991px){
+                            float:left;
+                            width:98%;
+                            margin-top:2%;
+                            text-transform:uppercase;
+                            font-size:14px;
+                        }
+                        @media(min-width:992px) and (max-width:1149px){
+                            float:left;
+                            width:49%;
+                            margin-top:0;
+                            text-transform:uppercase;
+                            padding: 1%;
+                            font-size:12px;
+                        }
+                        @media(min-width:1150px) and (max-width:1169px){
+                            float:left;
+                            width:49%;
+                            margin-top:0;
+                            text-transform:uppercase;
+                            padding: 2.5%;
+                            font-size:12px;
+                        }
+                        @media(min-width:1170px){
+                            float:left;
+                            width:49%;
+                            margin-top:0;
+                            text-transform:uppercase;
+                            padding: 2.5%;
+                            font-size:14px;
+                        }
+                    }
+                    .hl-info-btn{
+                         @include FadingGradientButton($button-gradient, .9, 0, ease-in-out, 0);
+                         color:$font-color-white;
+                         margin-right:2%;
+                    }
+                    .hl-info-btn:hover{
+                         @include FadingGradientButton($button-gradient, 1, 0, ease-in-out, 0);
+                         color:$font-color-white;
+                    }
+                    .hl-race-details-btn{
+                        @include FadingGradientButton($race-details-btn-bg, .9, 0, ease-in-out, 0);
+                        color:$font-color-white;
+                    }
+                    .hl-race-details-btn:hover{
+                        @include FadingGradientButton($race-details-btn-bg, 1, 0, ease-in-out, 0);
+                        color:$font-color-white;
+                    }
+                }
+            }
+        }
+       
+    }
+}

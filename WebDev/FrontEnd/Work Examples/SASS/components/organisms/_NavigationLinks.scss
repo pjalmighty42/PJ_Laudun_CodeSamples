@@ -1,0 +1,20 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.col-md-3{
+    .nav-links{
+        li{
+            a{
+                font-family: 'Open Sans',sans-serif;
+                font-size: 20px;
+                color: $red;
+                font-weight: 500;
+            }
+            a:hover{
+                color: $red;
+                font-weight:bold;
+            }
+        }
+    }
+}
+

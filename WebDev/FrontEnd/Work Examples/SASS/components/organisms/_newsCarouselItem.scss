@@ -1,0 +1,16 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.news-carousel-item{
+    article{
+        height:100%;
+
+        .img-bg{
+            width: 100%;
+            height: 40%;
+            background-position:center center;
+            background-size:cover;
+            z-index: 0;
+        }
+    }
+}

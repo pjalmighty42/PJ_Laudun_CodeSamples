@@ -1,0 +1,136 @@
+<!--
+    Sitecore using statements.
+    Redacted for demo purposes
+-->
+
+<!--Hotels Page Start-->
+<div class="row hotels-main-container">
+    <div class="col-xs-12 hotel-header-container">
+        <i class="fa fa-building-o hotels-icn" aria-hidden="true"></i> <span class="title-txt">Hotels</span>
+    </div>
+    <div class="col-xs-12 sort-container">
+        <label class="col-xs-12 col-sm-2 col-md-1 sort-title">Sort by</label>
+        <select class="col-xs-12 col-sm-2 hotel-sort-sel">
+            <option selected>-- Price --</option>
+            <option>Low to High</option>
+            <option>High to Low</option>
+        </select>
+        <select class="col-xs-12 col-sm-4 col-md-3 dist-sel">
+            <option selected>-- Distances --</option>
+            <option>5K Start Line</option>
+            <option>5K Finish Line</option>
+            <option>10K Start Line</option>
+            <option>10K Finish Line</option>
+            <option>Half Marathon Start Line</option>
+            <option>Half Marathon Finish Line</option>
+            <option>Marathon Start Line</option>
+            <option>Marathon Finish Line</option>
+            <option>Expo</option>
+        </select>
+        <!--I figured to include a reset button, as it would set everything back to default order for better UX for the user-->
+        <a class="btn red-grad-btn col-xs-12 col-sm-2 reset-btn">Reset</a>
+    </div>
+    <div class="col-xs-12 legend-container">
+        <div class="legend-cell">
+            <span class="leter-icon hq-bg hq-red legend-icons">H</span><span class="legend-txt">Headquarter</span>
+        </div>
+        <div class="legend-cell">
+            <span class="leter-icon wf-bg feat-green legend-icons">F</span><span class="legend-txt">Westin Featured</span>
+        </div>
+        <div class="legend-cell">
+            <span class="leter-icon off-bg off-black legend-icons">O</span><span class="legend-txt">Official</span>
+        </div>
+        <div class="legend-cell">
+            <span class="breakfast-span"><i class="fa fa-cutlery" aria-hidden="true"></i></span><span class="legend-txt">Breakfast Offered</span>
+        </div>
+        <div class="legend-cell">
+            <span class="shuttle-span"><i class="fa fa-bus" aria-hidden="true"></i></span><span class="legend-txt">Complimentary Shuttle</span>
+        </div>
+        <div class="legend-cell">
+            <span class="leter-icon sl-fl">SL</span><span class="legend-txt">Start Line</span>
+        </div>
+        <div class="legend-cell">
+            <span class="leter-icon sl-fl">FL</span><span class="legend-txt">Finish Line</span>
+        </div>
+    </div>
+    <div class="col-xs-12 blurb-container">
+        <div class="col-xs-12">
+            <figure class="btn-img-block col-xs-12 col-sm-3 blurb-img-container">
+                <img class="btn-img" />
+            </figure>
+            <p class="col-xs-12 col-sm-9 blurb-txt">Westin Hotels & Resorts &#x2D; the featured hotel partner of the Rock &#x27;n&#x27; Roll Marathon Series &#x2D; has developed special packages designed to remove the stresses of traveling for a race.</p>
+        </div>
+    </div>
+    <!--Westin Hotel Rows-->
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="col-xs-12 hotel-row-container">
+            <figure class="col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-2 hotel-row-img-container">
+                <span class="icon-container-top">
+                    <span class="leter-icon hq-bg hq-red legend-icons">H</span>
+                    <span class="leter-icon wf-bg feat-green legend-icons">F</span>
+                    <span class="leter-icon off-bg off-black legend-icons">O</span>
+                </span>
+                <span class="icon-container-bottom">
+                    <i class="fa fa-cutlery other-icon" aria-hidden="true"></i>
+                    <i class="fa fa-bus other-icon" aria-hidden="true"></i>
+                </span>
+                <img class="hotel-row-img btn-block" />
+            </figure>
+            <div class="col-xs-12 col-sm-8">
+                <h3 class="title-txt">Hotel Name</h3>
+                <p class="row-txt">Phone: (XXX) XXX-XXXX</p>
+                <p class="row-txt">Distance from:</p>
+                <div class="table dist-list">
+                    <div class="table-cell">
+                        <span class="dist-title">EXPO</span>
+                        <span>0.0 MI</span>
+                    </div>
+                    <div class="table-cell">
+                        <span class="dist-title">HM</span>
+                        <span class="dist-sl-fl">SL</span><span class="sl-dist">0.0 MI</span>
+                        <span class="dist-sl-fl">FL</span><span class="fl-dist">0.0 MI</span>
+                    </div>
+                    <div class="table-cell">
+                        <span class="dist-title">10K</span>
+                        <span class="dist-sl-fl">SL</span><span class="sl-dist">0.0 MI</span>
+                        <span class="dist-sl-fl">FL</span><span class="fl-dist">0.0 MI</span>
+                    </div>
+                    <div class="table-cell">
+                        <span class="dist-title">M</span>
+                        <span class="dist-sl-fl">SL</span><span class="sl-dist">0.0 MI</span>
+                        <span class="dist-sl-fl">FL</span><span class="fl-dist">0.0 MI</span>
+                    </div>
+                </div>
+            </div>
+            @{ 
+                //This is for the ids and the data-target for the collapse div.
+                string detailsIdName = "details-container" + i;
+                string detailsIdNameTarget = "#details-container" + i;
+            }
+            <div class="col-xs-12 col-sm-2 price-container">
+                <p class="price-top-txt">as low as</p>
+                <p class="price-txt">$$$$$.$$</p>
+                <p class="special-txt">Special Marker</p>
+                <a class="details-txt" data-toggle="collapse" data-target="@detailsIdNameTarget">More Details >></a>
+                <!--Buttons for the Price container. Regardless of if either/or is removed, it should adjust appropriately in the row.-->
+                <a class="btn btn-block red-grad-btn price-btn">Reserve Online</a>
+                <a class="btn btn-block sold-out-btn" disabled>Sold Out</a>
+            </div>
+            <div id="@detailsIdName" class="col-xs-12 collapse">
+                <div class="details-table col-xs-12">
+                    <div class="col-xs-12 col-sm-4">
+                        Days of the week
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        Single/Double/Triple/Quad
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        $$$
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<!--Hotels Page Ends-->

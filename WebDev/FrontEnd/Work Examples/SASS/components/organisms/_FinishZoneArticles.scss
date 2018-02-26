@@ -1,0 +1,677 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.stickem-container {
+  position: relative;
+}
+
+.stickit {
+	position: fixed;
+	top: 0;
+}
+
+.stickit-end {
+	bottom: 40px;
+	position: absolute;
+	left: 0;
+}
+
+/*Base settings*/
+.race-title,
+.div-title,
+.div-info {
+    text-align:center;
+}
+
+.race-title{
+    font-size:24px;
+}
+
+.div-title{
+    font-size:14px;
+}
+
+.div-info{
+    font-size:16px;
+}
+
+.red-text{
+    color:$red;
+    font-weight:400;
+}
+
+.div-border{
+    border:1px solid #ddd;
+}
+
+.button-div{
+    padding:0 !important;
+    select{
+        height: 5em;
+        border:1px solid #ddd;
+    }
+}
+
+.red-btn,
+.no-bg-btn{
+    @media(max-width:330px){
+        padding:3%;
+        font-size:12px;
+    }
+    @media(min-width:331px) and (max-width:375){
+        padding:3%;
+        font-size:14px;
+    }
+    @media(min-width:376px){
+        padding:3%;
+        font-size:18px;
+    }
+}
+
+.red-btn{
+    color:$font-color-white;
+    background-color:$red;
+    text-transform:uppercase;
+}
+
+.red-btn:hover{
+    color:$font-color-white;
+    background-color:$dark-red;
+}
+
+.red-grad-btn{
+    padding:1% 5%;
+    font-size:14px;
+    text-align:center;
+    @include FadingGradientButton($button-gradient, .9, 0, ease-in-out, 0);
+    color:$font-color-white;
+}
+
+.red-grad-btn:hover{
+    @include FadingGradientButton($button-gradient, 1, 0, ease-in-out, 0);
+    color:$font-color-white;
+}
+
+.no-bg-btn{
+    color:$red;
+}
+
+.no-bg-btn:hover{
+    color:$dark-red;
+    text-decoration:underline;
+}
+
+.btn-social-icon{
+    border-radius:100%;
+    padding: 6px 9px;
+    i{
+        font-size:20px;
+    }
+}
+
+#racer-info,
+#race-results, 
+#race-photos, 
+#race-badges, 
+#race-stats, 
+#race-speedometer,
+#race-next,
+#race-assessment,
+#race-cert{
+    @media(max-width:369px){
+        h2{
+            font-weight:400;
+            font-size: 22px;
+        }
+        h3{
+            font-weight:400;
+            font-size: 18px;
+        }
+        div{
+            padding:2%;
+        }
+    }
+    @media(min-width:370px){
+         h2{
+            font-weight:400;
+            font-size: 30px;
+        }
+        h3{
+            font-weight:400;
+            font-size: 24px;
+        }
+        div{
+            padding:2%;
+        }
+    }
+}
+
+#racer-info{
+    @media(max-width:991px){
+        h2{
+            margin-top:3%;
+        }
+    }
+
+    @media(min-width:992px){
+        h2{
+            margin-top:0;
+        }
+    }
+}
+
+#race-results{
+    
+    h4{
+        font-weight:400;
+    }
+    select{
+        font-weight:bold;
+        padding-left: 4%;
+        text-transform:uppercase;
+    }
+
+    .splits{
+
+        height: 20em;
+        .owl-wrapper-outer{
+            margin-top: 0;
+            .owl-wrapper{
+                .owl-item{
+                    padding:initial;
+                }
+            }
+        }
+
+        .owl-next, 
+        .owl-prev{
+             @include FadingGradientButton($button-gradient-trans, .9, .5s, ease-in-out, 0s);
+             .glyphicon{
+                color: rgba(214, 25, 32, 0.73);
+                text-shadow: 0 1px 2px rgba(0,0,0,.6);
+                margin-top: 65%;
+             }
+        }
+        .owl-next:hover{
+            @include FadingGradientButton($button-gradient-trans, .9, .5s, ease-in-out, 0s);
+            .glyphicon{
+                color: rgba(214, 25, 32, 1);
+                text-shadow: 0 1px 2px rgba(0,0,0,1);
+             }
+        }
+        .owl-prev:hover{
+            @include FadingGradientButton($button-gradient-trans, .9, .5s, ease-in-out, 0s);
+            .glyphicon{
+                color: rgba(214, 25, 32, 1);
+                text-shadow: 0 1px 2px rgba(0,0,0,1);
+             }
+        }
+    }
+
+    @media(max-width:464px){
+        .btn-img-block{
+            float:left;
+            min-height: 100px;
+            width:100%;
+            margin: 2% 3% 3% 2%;
+            background-color:$filter-btn-hover-bg;
+            display:flex;
+            justify-content:center;
+            .btn-img{
+                width:100%;
+                height:12em;
+            }
+        }
+
+        a{
+            margin-top:7%;
+            white-space: normal;
+            width:100%;
+            text-align:center;
+            float:left;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        .rnr-abtn,
+        .see-badges-btn{
+            margin-top: 0;
+            margin-left: 2%;
+        }
+    }
+
+    @media (min-width:465px) and (max-width:610px){
+        .btn-img-block{
+            float:left;
+            min-height: 100px;
+            width:100%;
+            margin: 2% 3% 3% 2%;
+            background-color:$filter-btn-hover-bg;
+            display:flex;
+            justify-content:center;
+            .btn-img{
+                width:50%;
+                height:12em;
+            }
+        }
+
+        a{
+            margin-top:7%;
+            white-space: normal;
+            width:100%;
+            text-align:center;
+            float:left;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        .rnr-abtn,
+        .see-badges-btn{
+            margin-top: 0;
+            margin-left: 2%;
+        }
+    }
+
+    @media (min-width:611px) and (max-width:767px){
+        .btn-img-block{
+            float:left;
+            min-height: 100px;
+            width:100%;
+            margin: 2% 3% 3% 2%;
+            background-color:$filter-btn-hover-bg;
+            display:flex;
+            justify-content:center;
+            .btn-img{
+                width:35%;
+                height:12em;
+            }
+        }
+
+        a{
+            margin-top:7%;
+            white-space: normal;
+            width:100%;
+            text-align:center;
+            float:left;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        .rnr-abtn,
+        .see-badges-btn{
+            margin-top: 0;
+            margin-left: 2%;
+        }
+    }
+
+    @media(min-width:768px){
+        .btn-img-block{
+            float:left;
+            min-height: 100px;
+            width:30%;
+            margin: 2% 3% 3% 2%;
+            background-color:$filter-btn-hover-bg;
+            .btn-img{
+                width:100%;
+                height:auto;
+            }
+        }
+
+        a{
+            margin-top:7%;
+            white-space: normal;
+            width:60%;
+            text-align:center;
+            float:left;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        .rnr-abtn{
+            margin-top: 10%;
+        }
+    
+        .see-badges-btn{
+            margin-top: 12%;
+        }
+    }
+    
+    .corr-btn,
+    .nxt-year-btn,
+    .dl-split-btn{
+        margin-top:0;
+        width:100%;
+    }
+}
+
+#race-photos{
+    .img-sponsor-block{
+        height:4em;
+        padding:0;
+        background-color:$filter-btn-hover-bg;
+        .photo-sponsor-img{
+            width:100%;
+            height:100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    .photos-div{
+        display:flex;
+        justify-content: center;
+        .photo-blocks{
+            height:190px;
+            padding:.5%;
+            background-color:$filter-btn-hover-bg;
+            margin:1%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            a{
+                padding:0;
+                width:100%;
+                height:100%;
+                margin:0;
+                .photo-img{
+                        width:100%;
+                        height:100%;
+                    }
+            }
+        }
+    }
+}
+
+#race-badges{
+    .badge-div{
+        a{
+            cursor:pointer;
+        }
+        .badge-img-div{
+            height: 120px;
+
+            @media(max-width:374px){
+                .btn{
+                    height: 110px;
+                    padding: .5%;
+                    background-color:$filter-btn-hover-bg;
+                    display:flex;
+                    justify-content:center;
+                    .badge-img{
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+
+            @media(min-width:375px) and (max-width:424px){
+                .btn{
+                    height: 110px;
+                    padding: .5%;
+                    background-color:$filter-btn-hover-bg;
+                    display:flex;
+                    justify-content:center;
+                    .badge-img{
+                        height: 100%;
+                        width: 45%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+
+            @media(min-width:425px) and (max-width:699px){
+                .btn{
+                    height: 110px;
+                    padding: .5%;
+                    background-color:$filter-btn-hover-bg;
+                    display:flex;
+                    justify-content:center;
+                    .badge-img{
+                        height: 100%;
+                        width: 40%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+
+            @media(min-width: 700px) and (max-width:767px){
+                .btn{
+                    height: 110px;
+                    padding: .5%;
+                    background-color:$filter-btn-hover-bg;
+                    display:flex;
+                    justify-content:center;
+                    .badge-img{
+                        height: 100%;
+                        width: 25%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+            @media(min-width:768px){
+                .btn{
+                    height: 110px;
+                    padding: .5%;
+                    background-color:$filter-btn-hover-bg;
+                    display:flex;
+                    justify-content:center;
+                    .badge-img{
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+        .badge-sm-div{
+            display:flex;
+            justify-content: center;
+             .btn-social-icon{
+                margin: 3%;
+            }
+        }
+    }
+}
+
+#race-stats{
+    .stat-table{
+        background-color:$filter-btn-hover-bg;
+        height: 350px;
+    }
+}
+
+#race-speedometer{
+    .speed-table{
+        background-color:$filter-btn-hover-bg;
+        height: 350px;
+    }
+}
+    
+#race-next{
+    .next-container{
+        min-height:35em;
+
+        h3{
+            text-align:center;
+        }
+
+        p{
+            height:20em;
+        }
+
+        .red-grad-btn{
+            padding:.75em;
+        }
+
+        .next-img-div-container{
+            display:flex;
+            justify-content:center;
+
+            @media(max-width:991px){
+                .next-img-div{
+                    height:14em;
+                    padding:0;
+                    background-color:$filter-btn-hover-bg;
+                    margin-bottom:1em;
+                    .btn-block{
+                        height:100%;
+                        width:100%;
+                        padding: .5%;
+                        margin-top:0;
+                        .next-img{
+                            height:100%;
+                            width:100%;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        }
+                    }
+                }
+            }
+            @media(min-width:992px){
+                .next-img-div{
+                    height:10em;
+                    padding:0;
+                    background-color:$filter-btn-hover-bg;
+                    margin-bottom:1em;
+                .btn-block{
+                        height:100%;
+                        width:100%;
+                        padding: .5%;
+                        .next-img{
+                            height:100%;
+                            width:100%;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tourpass-container{
+            height:100%;
+            h3{
+                margin-top:0;
+            }
+            .tp-info-div {
+                padding-top:0;
+            }
+            .tp-img-div{
+                background-color:$filter-btn-hover-bg;
+                height:14em;
+                padding: .5%;
+                .tourpass-img{
+                    width:100%;
+                    height:100%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+            .learn-more-div{
+                padding-left:0;
+            }
+        }
+}
+
+#race-assessment{
+    h3, p{
+        text-align:center;
+    }
+
+    .ra-top-div{
+        height: 100%;
+        .ra-img-div{
+            width:100%;
+            height: 22em;
+            background-color:$filter-btn-hover-bg;
+            display:flex;
+            justify-content: center;
+            padding: .5%;
+            .ra-img{
+                /*height:100%;
+                width:50%;*/
+                padding:0;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+    
+    .ra-sm-div{
+        width:100%;
+        display:flex;
+        justify-content: center;
+        a{
+            margin:1%;
+        }
+    }
+
+    .ad-div-container{
+        .ad-img-div-container{
+            display:flex;
+            justify-content:center;
+            .ad-img-div {
+                height:14em;
+                background-color:$filter-btn-hover-bg;
+                padding: .5%;
+                .ad-img{
+                    height:100%;
+                    width:100%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        }
+        
+        .learn-more-btn{
+            padding:0;
+        }
+        
+        h3, p{
+            text-align:left;
+        }
+    }
+}
+
+#race-cert{
+    h3, input{
+        text-align:center;
+    }
+    @media(max-width:556px){
+        h3{
+            margin-top:1%;
+            font-size: 22px;
+        }
+    }
+    @media(min-width:557px){
+        h3{
+            margin-top:1%;
+            font-size: 26px;
+        }
+    }
+
+    .dl-div{
+        display:flex;
+        justify-content: center;
+        .fa-download{
+            font-size: 30px;
+            background-color: $red;
+            padding: 2%;
+            border-radius: 100%;
+            color: $font-color-white;
+        }
+    }
+
+    .cert-cb-div{
+        .cert-cb-sel-div{
+            padding-left:15%;
+            font-size: 16px;
+        }
+    }
+
+}
