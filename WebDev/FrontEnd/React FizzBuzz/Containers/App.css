@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  font-size: 16px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 3em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.btnContainer{
+  min-height: 2em;
+  background-color: dimgray;
+  padding: 2%;
+}
+
+.btnContainer p{
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 1.5em;  
+  font-weight: bold;  
+  color: white;
+}
+
+button{
+  background-color: rgba(61, 172, 61, 0.281);
+  color: lightgreen;
+  border: 1px solid lightgreen;
+  font-size: 1em;
+  padding: .75% 3%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;  
+}
+
+button:hover{
+  background-color: rgba(61, 172, 61, 1);
+  color: white;
+  border: 1px solid white;
+}

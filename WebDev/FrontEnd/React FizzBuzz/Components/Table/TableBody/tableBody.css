@@ -1,0 +1,25 @@
+.fbTable{
+    width: 30%;
+    float: left;
+    margin:3% 0 0 3%;
+    border-collapse: collapse;
+}
+
+tr, th, td {
+    border: 1px solid gray;
+    padding: 2%;
+}
+
+th{
+    background-color: cadetblue;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
+.idCol{
+    background-color: lightcyan;
+    font-weight: bold;
+}
