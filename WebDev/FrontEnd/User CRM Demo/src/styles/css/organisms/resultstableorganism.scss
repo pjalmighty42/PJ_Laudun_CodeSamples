@@ -1,0 +1,136 @@
+$base-font-size:14px;
+$special-color:rgb(149, 156, 161);
+
+.results-div{
+    .pic-name-area{
+        max-height: 115px;
+        .pic-container,
+        .info-container{
+            padding: 0;
+        }
+
+        .pic-container{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            img{
+                width: 45%;
+                border-radius: 100%;
+                margin-top: 25%;
+                margin-left: 5%;
+                height: 50%;
+            }
+        }
+        .info-container{
+            p{
+                margin-bottom: 0;
+                font-size: $base-font-size;
+            }
+
+            .person-name{
+                text-transform: capitalize;
+                font-weight: 500;
+                margin-top: 10%;
+                font-size: $base-font-size + 2;
+            }
+
+            .person-email{
+                color: $special-color;
+                font-size: $base-font-size - 2;
+            }
+
+            .person-loc{
+                text-transform: capitalize;
+                font-weight: 400;
+                margin-bottom: 5%;
+            }
+        }
+
+        .dropdown-container{
+            position: relative;
+            display: inline-block;
+            .results-ddl{
+                margin-top: 50%;
+                border: none;
+                cursor: pointer;
+                .dropdown-btn{
+                    background-color: transparent;
+                    border: none;
+                    font-size: $base-font-size + 4;
+                    color: $special-color;
+                }
+                .dropdown-content{
+                    display: none;
+                    position: absolute;
+                    background-color: #fff;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                    left: -115%;
+                    border-radius: 5px;
+                    ul{
+                        list-style: none;
+                        padding: 0;
+                        padding-left: 12%;
+                        padding-top: 9%;
+                        >li{
+                            a{
+                                color: $special-color;
+                                padding: 12px 16px;
+                                text-decoration: none;
+                                display: block;
+                            }
+                            a:hover{
+                                color: initial;
+                            }
+                        }
+                    }
+                }
+            }
+            .results-ddl:hover{
+                .dropdown-btn{
+                    color:initial;
+                }
+                .dropdown-content{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .tags-sel-area{
+        .tags-container{
+            margin-bottom: 5%;
+            padding: 0;
+            padding-left: 15px;
+            display: flex;
+            justify-content: center;
+            >.tags{
+                font-size: $base-font-size - 4;
+                background-color: #F4F8F9;
+                padding: 2% 3%;
+                border-radius: 6px;
+                margin: 1%;
+                min-width: 75px;
+            }
+        }
+        //Wanted to get a custom checkbox going, but I ran out of time
+        //Figured that this would be the closest to the orginal page
+        .cb-container{
+            display: flex;
+            justify-content: center;
+            input{
+                -ms-transform: scale(1.5);
+                -moz-transform: scale(1.5); 
+                -webkit-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+                margin-top: 25%;
+            }
+        }
+    }
+}
+
+.results-div:hover{
+    background-color: #E8F4F9;
+}

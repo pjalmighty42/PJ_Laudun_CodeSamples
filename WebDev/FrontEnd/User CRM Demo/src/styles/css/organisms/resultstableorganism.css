@@ -1,0 +1,135 @@
+.results-div .pic-name-area {
+  max-height: 115px;
+}
+
+.results-div .pic-name-area .pic-container,
+.results-div .pic-name-area .info-container {
+  padding: 0;
+}
+
+.results-div .pic-name-area .pic-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.results-div .pic-name-area .pic-container img {
+  width: 45%;
+  border-radius: 100%;
+  margin-top: 25%;
+  margin-left: 5%;
+  height: 50%;
+}
+
+.results-div .pic-name-area .info-container p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.results-div .pic-name-area .info-container .person-name {
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-top: 10%;
+  font-size: 16px;
+}
+
+.results-div .pic-name-area .info-container .person-email {
+  color: #959ca1;
+  font-size: 12px;
+}
+
+.results-div .pic-name-area .info-container .person-loc {
+  text-transform: capitalize;
+  font-weight: 400;
+  margin-bottom: 5%;
+}
+
+.results-div .pic-name-area .dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl {
+  margin-top: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #959ca1;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: -115%;
+  border-radius: 5px;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl .dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 12%;
+  padding-top: 9%;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl .dropdown-content ul > li a {
+  color: #959ca1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl .dropdown-content ul > li a:hover {
+  color: initial;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl:hover .dropdown-btn {
+  color: initial;
+}
+
+.results-div .pic-name-area .dropdown-container .results-ddl:hover .dropdown-content {
+  display: block;
+}
+
+.results-div .tags-sel-area .tags-container {
+  margin-bottom: 5%;
+  padding: 0;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.results-div .tags-sel-area .tags-container > .tags {
+  font-size: 10px;
+  background-color: #F4F8F9;
+  padding: 2% 3%;
+  border-radius: 6px;
+  margin: 1%;
+  min-width: 75px;
+}
+
+.results-div .tags-sel-area .cb-container {
+  display: flex;
+  justify-content: center;
+}
+
+.results-div .tags-sel-area .cb-container input {
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  margin-top: 25%;
+}
+
+.results-div:hover {
+  background-color: #E8F4F9;
+}
