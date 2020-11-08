@@ -14,4 +14,18 @@ Because of this, this solution need to:
 3. But be a strictly JS/JQuery-based solution because of the limitation of the tech-stack
 
 #### Solution
-The solution that I came up with was to figure out and mimmic the basic premise of how React functions. To basically take in the API list of any size of controls (a JSON list), and dynamically allow for the creation of the various controls to show on the fly. This is a posting of this for my portfolio/resume. Feel free to look it over! It is unfinished at the moment, but I am actually doing some of the updates that I wanted to do to this (before I was let go),
+The solution that I came up with was to figure out and mimmic the basic premise of how React functions. To basically take in the API list of any size of controls (a JSON list), and dynamically allow for the creation of the various controls to show on the fly. This is a posting of this for my portfolio/resume. Feel free to look it over! It is unfinished at the moment, but I am actually doing some of the updates that I wanted to do to this (before I was let go).
+
+##### Key Points
+- This application will take an AJAX (JQuery AJAX) call from a Controller Action, and get a list of JSON objects.
+- I will take the passed in list and go to the "ControlObjectsMainController" function within "ControlObjects.js"
+- This basically work as a switch-board that takes the object and based on the type (controlType var) and the sub-type (dataType) decypher and output a control to the page
+- Like React, I have a variation of it, as the list of html data created (the HTML output of the controls), will be appended to whatever is the passed in bodyID using JQuery.
+- Initally was started as a way to make basic control inputs available (I.E.- Inputs, Radios, Dropdowns), but the company at the time wanted to use it for other projects (which fell through with new leadership, so I'm posting this here for my portfolio/resume).
+
+#### Technologies Used
+- ES 6+
+- JQuery
+- Bootstrap
+- SCSS/SASS for the CSS
+- Built within a .Net enviorment
