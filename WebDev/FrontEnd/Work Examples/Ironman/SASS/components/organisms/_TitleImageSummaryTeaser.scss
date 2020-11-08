@@ -1,0 +1,492 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+@media (max-width: 319px)  {
+    .m-b-1-sumTeaser{
+        
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+                height:auto;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 58%;
+                margin-left: 23%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px)  {
+    .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 58%;
+                margin-left: 23%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px)  {
+    .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 49%;
+                margin-left: 26.5%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+
+@media (min-width: 425px) and (max-width: 767px)  {
+   .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+
+            .img-responsive{
+                border-radius:0;
+                width: 70%;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 49%;
+                margin-left: 26.5%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1023px){
+    .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+
+            h3{
+                font-size: 22px !important;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+
+            .img-responsive{
+                border-radius:0;
+                width: 100% !important;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 63% !important;
+                margin-left: 17% !important;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+            .img-responsive{
+                border-radius:0;
+                width: 50%;
+            }
+        }
+
+        .caption{
+            p{
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 25%;
+                margin-left: 37.5%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1023px) { 
+  .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            height:$base-em * 5.5;
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+            height:$base-em * 13;
+            .img-responsive{
+                border-radius:0;
+                width: 50%;
+            }
+        }
+
+        .caption{
+            height:$base-em * 13;
+            p{
+                height:$base-em * 10;
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 25%;
+                margin-left: 37.5%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1439px){
+   .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            height:$base-em * 5.5;
+            h3{
+                font-size: 22px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+            height:$base-em * 13;
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+            }
+        }
+
+        .caption{
+            height:$base-em * 13;
+            p{
+                height:$base-em * 10;
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 70%;
+                margin-left: 15%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px) and (max-width: 2559px){
+   .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            height:$base-em * 5.5;
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+            height:$base-em * 14;
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+            }
+        }
+
+        .caption{
+            height:$base-em * 13;
+            p{
+                height:$base-em * 10;
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 70%;
+                margin-left: 15%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+
+@media (min-width: 2560px) { 
+    .m-b-1-sumTeaser{
+        .thumbnail-header{
+            border-bottom: 1px solid #ee1c24;
+            height:$base-em * 5.5;
+            h3{
+                font-size: 26px;
+                margin-top: 7%;
+                margin-bottom: 9%;
+                text-align: center;
+                color:$text-color;
+                text-transform:uppercase;
+            }
+        }
+
+         .thumb-body{
+            margin-top: 9%;
+            height:$base-em * 14;
+            .img-responsive{
+                border-radius:0;
+                width: 100%;
+            }
+        }
+
+        .caption{
+            height:$base-em * 13;
+            p{
+                height:$base-em * 10;
+                color: $text-color-hover;
+                margin-top: 7%;
+                margin-bottom: 7%;
+                font-size:16px;
+            }
+
+            .btn{
+                background-color:$red;
+                color:#fff !important;
+                @include FadingGradientButton($button-gradient, .9, .5s, ease-in-out, .025s);
+                width: 70%;
+                margin-left: 15%;
+            }
+
+            .btn:hover{
+                color:#fff;
+                @include FadingGradientButton($button-gradient, 1, .5s, ease-in-out, .025s);
+            }
+        }
+    }
+}
+

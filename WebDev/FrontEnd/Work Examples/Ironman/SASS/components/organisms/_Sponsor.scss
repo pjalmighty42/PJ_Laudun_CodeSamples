@@ -1,0 +1,51 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.sponsor-carousel-item{
+    display:block;
+    padding: 0 10px;
+    height:100%;
+
+    image{
+        height:100%;
+
+        .img-bg{
+            width: 100%;
+            height: 40%;
+            background-position:center center;
+            background-size:cover;
+            z-index: 0;
+        }
+    }
+}
+
+.partnerlogos {
+    padding-top: 0;
+    padding: 60px 16px;
+    display: block;
+    box-sizing: inherit;
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        text-transform: uppercase;
+        text-align: center;
+
+
+        .wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+        }
+    }
+}
+
+.img{
+    max-width: 100%;
+    height: auto;
+    vertical-align:middle;
+}
+
+

@@ -1,0 +1,33 @@
+﻿/*Global Imports*/
+@import "templates/_NavbarTemplate.scss";
+@import "templates/_FooterTenplate.scss";
+@import "templates/_Sidebars.scss";
+
+/*MEGA MENUZ!!!!(~!)*/
+@import "templates/_MegaMenuTemplate.scss";
+
+/*Improrts for the Home Page*/
+@import "templates/_NewsHomeTemplate.scss";
+@import "templates/_NewsCarouselItemTemplate.scss";
+
+/*Social Link Handle*/
+@import "templates/_SocialLinkHandleTemplate.scss";
+
+/*Programs Page*/
+@import "templates/_JumotronProgramsTemplate.scss";
+@import "templates/_NavigationLinksTemplate.scss";
+@import "templates/_PageTitleTemplate.scss";
+
+/*Map Events*/
+@import "templates/_EventsMapTemplate.scss";
+
+/*Events Page*/
+@import "templates/_SummaryTeaserTemplate.scss";
+
+/*Finish Zone*/
+@import "templates/_FinisherZoneTemplate.scss";
+@import "templates/_FinishZoneArticlesTemplate.scss";
+
+/*Sales Page*/
+@import "templates/_SalesFilterTemplate.scss";
+@import "templates/_SalesRaceContainerTemplate.scss";

@@ -1,0 +1,895 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+@media (max-width:320px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:3%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                visibility:hidden;
+            }
+
+            .dist-content{
+                visibility:hidden;
+            }
+        }
+    }
+
+    
+    .brands-modal{
+        .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+        .modal-body{
+             height:25em;
+             overflow-y:scroll;
+             .brands-content {
+                padding-left:0;
+
+                .brand-filter-btns{
+                    padding-left:1%;
+                    width:100%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    margin-bottom: 2%;
+                    i, a{
+                        padding:1%;
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+
+                    a{
+                        font-size:22px;
+                    }
+                }
+                
+
+                .brand-filter-btns.active{
+                    width:100%;
+                    background-color: $dark-red;
+                    i, a{
+                        padding:1%;
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+         }
+        .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+
+    .dist-modal{
+        .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+         .modal-body{
+             height:25em;
+             overflow-y:scroll;
+             
+             .dist-content {
+                    padding-left:0;
+                    .dist-filter-btns{
+                    width:100%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    margin-bottom: 2%;
+                    i, a{
+                        padding:1%;
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+
+                    a{
+                        font-size:22px;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:100%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+         }
+         .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media (min-width:321px) and (max-width:426px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:3%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                visibility:hidden;
+            }
+
+            .dist-content{
+                visibility:hidden;
+            }
+        }
+    }
+
+   .brands-modal{
+        .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+        .modal-body{
+             height:25em;
+             overflow-y:scroll;
+             .brands-content {
+                padding-left:0;
+
+                .brand-filter-btns{
+                width:100%;
+                display:inline-flex;
+                border:none;
+                background-color: transparent;
+                margin-bottom: 3%;
+                i, a{
+                    color:$text-color;
+                    text-decoration:none;
+                    font-weight:bold;
+                    text-transform:uppercase;
+                    padding:2%;
+                }
+
+                    a{
+                    font-size:22px;
+                }
+            }
+
+
+                .brand-filter-btns.active{
+                width:100%;
+                background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+         }
+        .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+
+    .dist-modal{
+        .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+         .modal-body{
+             height:25em;
+             overflow-y:scroll;
+             .dist-content {
+                    padding-left:0;
+                    .dist-filter-btns{
+                    width:100%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    margin-bottom: 3%;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                        padding:2%;
+                    }
+
+                     a{
+                        font-size:22px;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:100%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+         }
+         .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+}    
+
+@media (min-width:427px) and (max-width:550px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:3%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                visibility:hidden;
+            }
+
+            .dist-content{
+                visibility:hidden;
+            }
+        }
+    }
+
+   .brands-modal{
+       .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+         .modal-body{
+             height:25em;
+             overflow-y:scroll;
+             .brands-content {
+                padding-left:0;
+
+                .brand-filter-btns{
+                width:100%;
+                display:inline-flex;
+                border:none;
+                background-color: transparent;
+                margin-bottom: 1%;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                        padding:2%;
+                    }
+                    a{
+                        font-size:24px;
+                    }
+                }
+
+
+                .brand-filter-btns.active{
+                width:100%;
+                background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+         }
+         .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+
+    .dist-modal{
+        .modal-header{
+            .close{
+                background: $red;
+                color: #fff;
+                border: none;
+                width: 35px;
+                height: 32px;
+                font-size:22px;
+            }
+        }
+        .modal-body{
+            height:25em;
+            overflow-y:scroll;
+
+            .dist-content {
+                padding-left:0;
+                .dist-filter-btns{
+                width:100%;
+                display:inline-flex;
+                border:none;
+                background-color: transparent;
+                margin-bottom: 2%;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                        padding:3%;
+                    }
+                    a{
+                        font-size:24px;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:100%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+        .modal-footer{
+            button{
+                background-color: red;
+                color: #fff;
+                border: none;
+                width: 100px;
+                font-size: 22px;
+            }
+        }
+    }
+}    
+
+@media (min-width:551px) and (max-width:800px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:1%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                width: 70vw;
+                padding: 15px;
+                margin-top:-24px;
+                .brand-filter-btns{
+                    width:47%;
+                    margin:1%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .brand-filter-btns.active{
+                    width:47%;
+                    margin:1%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+
+            .dist-content{
+                width: 70vw;
+                //left: -75%;
+                padding: 15px;
+                margin-top:-24px;
+                .dist-filter-btns{
+                    width:47%;
+                    margin:1%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    a{
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:47%;
+                    margin:1%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands-modal{
+        visibility:hidden;
+    }
+
+      .dist-modal{
+        visibility:hidden;
+    }
+}    
+
+@media (min-width:801px) and (max-width:960px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:1%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                width: 70vw;
+                padding: 15px;
+                margin-top:-24px;
+                .brand-filter-btns{
+                    width:30.5%;
+                    margin:1%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+                .brand-filter-btns.active{
+                width:30.5%;
+                margin:1%;
+                background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+            .dist-content{
+                width: 70vw;
+                //left: -75%;
+                padding: 15px;
+                margin-top:-24px;
+                .dist-filter-btns{
+                    width:30.5%;
+                    margin:1%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:30.5%;
+                    margin:1%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands-modal{
+        visibility:hidden;
+    }
+
+      .dist-modal{
+        visibility:hidden;
+    }
+}    
+
+@media (min-width:961px) and (max-width:1440px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:1%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                width: 70vw;
+                padding: 15px;
+                margin-top:-24px;
+                .brand-filter-btns{
+                    width:22.5%;
+                    margin:.25%;
+                    display:inline-flex;
+                    border:none;
+                    background-color: transparent;
+
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .brand-filter-btns.active{
+                    width:22.5%;
+                    margin:.25%;
+
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+            .dist-content{
+                width: 70vw;
+                //left: -75%;
+                padding: 15px;
+                margin-top:-24px;
+                .dist-filter-btns{
+                    width:22.5%;
+                    margin:.25%;
+                    display:inline-flex;
+                    background-color: transparent;
+                    border:none;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:22.5%;
+                    margin:.25%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands-modal{
+        visibility:hidden;
+    }
+
+      .dist-modal{
+        visibility:hidden;
+    }
+}
+
+@media (min-width:1441px) and (max-width:2559px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:1%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                width: 70vw;
+                padding: 15px;
+                margin-top:-24px;
+                .brand-filter-btns{
+                    border:none;
+                    width:22.5%;
+                    margin:.25%;
+                    display:inline-flex;
+
+                    background-color: transparent;
+
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .brand-filter-btns:hover{
+                    
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                    } 
+                }
+
+                .brand-filter-btns.active{
+                    width:22.5%;
+                    margin:.25%;
+
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+            .dist-content{
+                width: 70vw;
+               // left: -75%;
+                padding: 15px;
+                margin-top:-24px;
+                .dist-filter-btns{
+                    border:none;
+                    width:22.5%;
+                    margin:.25%;
+                    display:inline-flex;
+
+                    background-color: transparent;
+                    i, a{
+                        color:$text-color;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .dist-filter-btns:hover{
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                    } 
+                }
+
+                .dist-filter-btns.active{
+                    width:22.5%;
+                    margin:.25%;
+                    background-color: $dark-red;
+                    i, a{
+                        color: #fff;
+                        text-decoration:none;
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands-modal{
+        visibility:hidden;
+    }
+
+      .dist-modal{
+        visibility:hidden;
+    }
+}
+
+@media (min-width:2560px){
+    .filters-container {
+        display:flex;
+        padding-bottom: 3%;
+        padding-top: 3%;
+
+        .date-div, .brands-div, .dist-div{
+            margin-left:1%;
+
+            .date-btn, .brands-btn, .dist-btn{
+                border: 2px solid $filter-border-color;
+                color:$filter-btn-hover-color;
+                font-weight:bold;
+                text-transform:uppercase;
+            }
+
+            .brands-content {
+                width: 50vw;
+                padding: 15px;
+                margin-top:-24px;
+                .brand-filter-btns{
+                    width:22.5%;
+                    margin:1%;
+                    border: 2px solid $filter-border-color;
+                    color:$filter-btn-hover-color;
+                    a{
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .brand-filter-btns.active{
+                    width:22.5%;
+                    margin:1%;
+                    border: 2px solid $filter-btn-hover-color;
+                    color: $filter-border-color;
+                    a{
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+            .dist-content{
+                width: 50vw;
+                //left: -75%;
+                padding: 15px;
+                margin-top:-24px;
+                .dist-filter-btns{
+                    width:22.5%;
+                    margin:1%;
+                    border: 2px solid $filter-border-color;
+                    color:$filter-btn-hover-color;
+                    a{
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+
+                .dist-filter-btns.active{
+                    width:22.5%;
+                    margin:1%;
+                    border: 2px solid $filter-btn-hover-color;
+                    color: $filter-border-color;
+                    a{
+                        font-weight:bold;
+                        text-transform:uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands-modal{
+        visibility:hidden;
+    }
+
+      .dist-modal{
+        visibility:hidden;
+    }
+}

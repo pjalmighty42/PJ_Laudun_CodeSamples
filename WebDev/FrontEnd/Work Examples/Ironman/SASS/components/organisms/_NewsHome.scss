@@ -1,0 +1,141 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+.col-lg-6.featured-news{
+        .news-tiles{
+            @include SetNewsMargins($news-title);
+            @include SetNewsTitle(350px, hidden);
+            .tile-bg{
+                @include SetTitleBG(100%, 100%, $bg-title-position, cover, 0, absolute);
+            }
+
+            &.bg-media{
+                &:after{
+                    @include SetBGMediaAfter($bg-media-after-color, $bg-media-after-img-col6);
+                }
+
+                &:hover{
+                    .tile-bg{
+                            @include SetBGMediaHover(scale(1.1), $bg-media-hover-filter-string, $bg-media-hover-filter);
+                        }
+                    }
+            }
+
+            .btn{
+                @include SetPosition("",absolute,"",2.1rem,1.8rem,"","","");
+            }
+
+            .news-type{
+                @include SetNewsTypeStyle(white, 1.4rem, center, 4.85rem, 4.85rem, 50%, #333);
+                @include SetPosition(absolute, "", "", 3.5rem, "", "", 3.5rem, "");
+
+                i{
+                    @include SetTextStyle("", "", "", "", "", 1px,"","","","","","");
+                    @include SetPosition(block, relative, "", 50%, "", "","",2);
+                    @include Set2DTransforms($italic-news-types-transform, "", "", "", "");
+                }
+            }
+
+            .bottom{
+                @include SetPosition("",absolute,"","",3.8rem,3.1rem,3.8rem,"");
+
+                h3{
+                    @include SetPosition("","", 0.7rem 0 0.78rem 0, "", "","","","");
+                }
+            }
+        }
+
+}
+
+.col-lg-4.featured-news{
+        .news-tiles{
+            @include SetNewsMargins($news-title);
+            @include SetNewsTitle(240px, hidden);
+            .tile-bg{
+                 @include SetTitleBG(100%, 100%, $bg-title-position, cover, 0, absolute);
+            }
+
+            &.bg-media{
+                &:after{
+                    @include SetBGMediaAfter($bg-media-after-color, $bg-media-after-img-col4);
+                }
+
+                &:hover{
+                    .tile-bg{
+                        @include SetBGMediaHover(scale(1.1), $bg-media-hover-filter-string, $bg-media-hover-filter);
+                    }
+                }
+            }
+
+            .news-type{
+                @include SetTextStyle("","", "", "", "", "", 1px,"","","","","","");
+                @include SetNewsTypeStyle(white, 1.4rem, center, 4.85rem, 4.85rem, 50%, #333);
+                @include SetPosition(absolute, "", "", 3.5rem, "", "", 3.5rem, "");
+
+                i{
+                    @include SetTextStyle("","", "", "", "", "", 1px,"","","","","","");
+                    @include SetPosition(block, relative, "", 50%, "", "","",2);
+                    @include Set2DTransforms($italic-news-types-transform, "", "", "", "");
+                }
+            }
+
+            .bottom{
+                @include SetPosition("",absolute,"","",3.8rem,3.1rem,3.8rem,"");
+
+                h3{
+                    @include SetPosition("","", 0.7rem 0 0.78rem 0, "", "","","","");
+                }
+            }
+        }
+}
+
+.absolute-center{
+    @include SetPosition("", $news-absolute-position-setting, "", $news-postion-50Per, $news-postion-50Per,"","","");
+    @include Set2DTransforms($news-center-transform, "", "", "", "");
+    @include Set3DTransforms("","", hidden, "", "", "", "", "");
+    width:90%;
+}
+
+.news-list-large{
+    div{
+        figure{
+            @include SetPosition("", relative,"","","","","","");
+
+            figcaption{
+                @include SetPosition("", absolution, "", 1rem, 1rem,"","","");
+
+                a{
+                    @include SetTextStyle("",white,"","","","","","","","","","","");
+
+                    &:hover{
+                        @include SetTextStyle("",#888,"","","","","","","","","","","");
+                    }
+                }
+            }
+        }
+    
+        h3{
+            @include SetPosition("","", 0 0 15px 0, "", "", "", "", "");
+            @include SetTextStyle("","","","","","","","",1.4,"","","","");
+            
+            a{
+                @include SetTextStyle("",#111,"","","","","","","","","","","");
+
+                &:hover{
+                    @include SetTextStyle("",#f00,"",none,"","","","","","","","","");
+                }
+            }
+        }
+        ul{
+            @include SetPosition("","", 0 0 1rem 0, "", "", "", "", "");
+
+            li{
+                @include SetTextStyle(12px,"","","","","","","","","","","","");
+            }
+        }
+
+        p{
+            @include SetTextStyle("",#111,"","","","","","","","","","","");
+        }
+    }
+}

@@ -1,0 +1,30 @@
+﻿@import "../../_functions.scss";
+@import "../../_variables.scss";
+
+@media (min-width: 480px) and (max-width: 786px) { 
+    .page-header.bg-media{
+        @include SetJumbotron(350px, $red);
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 768px) and (max-width: 940px) { 
+    .page-header.bg-media{
+        @include SetJumbotron(400px, $red);
+    }
+}
+
+/* Default: 940px and up  */
+@media(min-width: 940px) and (max-width:1210px){
+    .page-header.bg-media{
+        @include SetJumbotron(487px, $red);
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1210px) { 
+    .page-header.bg-media{
+        @include SetJumbotron(487px, $red);
+    }
+}
+

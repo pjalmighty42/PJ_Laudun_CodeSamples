@@ -1,0 +1,106 @@
+﻿<!--
+    Sitecore using statements.
+    Redacted for demo purposes
+-->
+
+<!--
+    This is only for Demo purposes. I had already moved all of this to the _ShareHandle.cshtml partial in the Social folder.
+
+    Feel free to delete this and use the Html.Partial() deal (I don't know how to do that in Sitecore yet)
+-->
+<div class="row social-media-main">
+    <div class="share-container col-sm-12 col-md-12">
+        <button class="col-sm-2 col-md-3 btn share-btn">
+            <div class="col-sm-8 col-md-8 share-txt">Share</div>
+            <div class="col-sm-4 col-md-4 share-logo"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
+        </button>
+        <ul class="col-sm-10 col-md-9 share-contents">
+            <li class="btn"><a href="mailto:example@email.com?subject=Email%20Subject"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li class="btn"><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            <li class="btn"><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            <li class="btn"><a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+            <li class="btn"><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+            <li class="btn clipboard-cont">
+                <span class="copy-txt">Copy URL <i class="fa fa-files-o" aria-hidden="true"></i></span>
+                <input class="clipboard-url" type="text" placeholder="" />
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    window.smoothScroll = function (target) {
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000);
+    }
+
+    $(document).ready(function () {
+        $('.share-btn').click(function () {
+            var shareContentsBtns = [];
+
+            $('.share-contents li').each(function () {
+                shareContentsBtns.push(this);
+            });
+
+            if ($(window).width() < 767) {
+                $('.social-media-main').toggleClass('toggleDivResize');
+            }
+
+            for (var i = 0; i < shareContentsBtns.length; i++) {
+                $(shareContentsBtns[i]).toggleClass('extendBtnsHorizontal visible');
+            }
+
+            $('.clipboard-url').attr('placeholder', window.location.href);
+        });
+
+        $('.clipboard-cont').click(function () {
+            $('.copy-txt').html('Copied! <i class="fa fa-files-o" aria-hidden="true"></i>');
+            setTimeout(function () {
+                $('.copy-txt').html('Copy URL <i class="fa fa-files-o" aria-hidden="true"></i>');
+            }, 2500);
+
+        });
+
+        $('.fz-sidebar').fixTo('start');
+        $('.fz-sidebar').fixTo('.fz-container');
+        $('.fz-sidebar').fixTo('refresh');
+    });
+</script>
+
+@if (Model.Item.FieldHasValue(Sitecore.Feature.Person.Templates.HasAuthor.Fields.Author) || Sitecore.Context.PageMode.IsExperienceEditor)
+{
+        var typeItem = Model.Item.GetDropLinkItem(Sitecore.Feature.Person.Templates.HasAuthor.Fields.Author);
+        var authorName = typeItem.Fields["Name"].ToString();
+        <div class="author row">
+            <div class="col-md-3">
+                @if (Sitecore.Context.PageMode.IsExperienceEditor || typeItem.FieldHasValue(Templates.Person.Fields.Picture))
+                {
+                    @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, typeItem, mw: 100, cssClass: "img-responsive center-block")
+                }
+            </div>
+            <div class="col-md-9 author-body">
+                <div class="row">
+                    <a>
+                        <h4>
+                            @typeItem.Field(Templates.Person.Fields.Name)
+                        </h4>
+                    </a>
+                </div>
+                <div class="row">
+                    <hr />
+                </div>
+                <div class="row">
+                    @if (Sitecore.Context.PageMode.IsExperienceEditor || typeItem.FieldHasValue(Templates.Person.Fields.Summary))
+                    {
+                        <p class="author-p">
+                            @typeItem.Field(Templates.Person.Fields.Summary)
+                        </p>
+                    }
+                </div>
+                <div class="row">
+                    <a class="btn btn-default all-auth-btn" href="#">All author posts</a>
+                </div>
+            </div>
+        </div> 
+}
