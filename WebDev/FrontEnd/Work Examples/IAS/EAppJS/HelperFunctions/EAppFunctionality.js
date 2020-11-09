@@ -202,7 +202,7 @@ function openEnableChildEl(id) {
     });
 }
 
-function updateFirstName(id) {
+function updateTopInfoFirstName(id) {
     $(document).ready(function () {
         var val = $("#" + id).val();
 
@@ -216,7 +216,7 @@ function updateFirstName(id) {
     });
 }
 
-function updateMiddleInitial(id) {
+function updateTopInfoMiddleInitial(id) {
     $(document).ready(function () {
         var val = $("#" + id).val();
 
@@ -225,7 +225,7 @@ function updateMiddleInitial(id) {
     });
 }
 
-function updateLastName(id) {
+function updateTopInfoLastName(id) {
     $(document).ready(function () {
         var val = $("#" + id).val();
 
