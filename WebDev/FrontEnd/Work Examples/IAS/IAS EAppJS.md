@@ -22,6 +22,8 @@ The solution that I came up with was to figure out and mimmic the basic premise 
 - This basically work as a switch-board that takes the object and based on the type (controlType var) and the sub-type (dataType) decypher and output a control to the page
 - Like React, I have a variation of it, as the list of html data created (the HTML output of the controls), will be appended to whatever is the passed in bodyID using JQuery.
 - Initally was started as a way to make basic control inputs available (I.E.- Inputs, Radios, Dropdowns), but the company at the time wanted to use it for other projects (which fell through with new leadership, so I'm posting this here for my portfolio/resume).
+- Because this was not a React app, I used Gulp/Babel to take all the JS files, transpile, merge, then uglify. 
+- On the CSS-side of the house, I used an ATOM Design Principle, and created the; Atom, Molecules, Organisms, Templates, and Pages, folders and files, then a root file to import all the SCSS files, to also use Gulp/Babel to; transpile, merge, and minify, from SCSS/SASS into CSS for the sites. I did not include this work as I didn't have enough time to include them on my way out.
 
 #### Technologies Used
 - ES 6+
