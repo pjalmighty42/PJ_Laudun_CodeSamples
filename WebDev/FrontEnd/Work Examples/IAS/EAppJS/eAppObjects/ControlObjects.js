@@ -1,4 +1,4 @@
-﻿function getParameterByName(name, url) {
+﻿const getParameterByName = (name, url) => {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -18,148 +18,133 @@ var data = {
     signpadInfo: []
 };
 
-function ControlObject(
-    suffix,
-    id,
-    controlType,
-    dataType,
-    value,
-    secondaryVal,
-    responses,
-    sequence,
-    answerVal,
-    triggerType,
-    childElIDsArr,
-    accordOptions,
-    isEnabled,
-    isRequired,
-    rulesMsg,
-    gridCount
-) {
-    this.suffix = !NullOrEmptyCheck(suffix) ? suffix : "";
-    this.id = id;
-    this.controlType = controlType;
-    this.dataType = dataType;
-    this.value = value;
-    this.secondaryVal = secondaryVal;
-    this.responses = responses;
-    this.sequence = sequence;
-    this.answer = answerVal;
-    this.triggerType = triggerType;
-    this.childElIDsArr = childElIDsArr;
-    this.accordionOptions = accordOptions;
-    this.isEnabled = isEnabled;
-    this.isRequired = isRequired;
-    this.RuleMessage = rulesMsg;
-    this.gridCount = gridCount;
+class ControlObject {
+    constructor(
+        suffix,
+        id,
+        controlType,
+        dataType,
+        value,
+        secondaryVal,
+        responses,
+        sequence,
+        answerVal,
+        triggerType,
+        childElIDsArr,
+        accordOptions,
+        isEnabled,
+        isRequired,
+        rulesMsg,
+        gridCount
+    ) {
+        this.suffix = !NullOrEmptyCheck(suffix) ? suffix : "";
+        this.id = id;
+        this.controlType = controlType;
+        this.dataType = dataType;
+        this.value = value;
+        this.secondaryVal = secondaryVal;
+        this.responses = responses;
+        this.sequence = sequence;
+        this.answer = answerVal;
+        this.triggerType = triggerType;
+        this.childElIDsArr = childElIDsArr;
+        this.accordionOptions = accordOptions;
+        this.isEnabled = isEnabled;
+        this.isRequired = isRequired;
+        this.RuleMessage = rulesMsg;
+        this.gridCount = gridCount;
+    };
 };
 
 // This function will create the triggers, then join them with the body elements
-function CreateBodyEls(elArr, appID) {
-    console.log("CreateBodyEls");
-
-    for (var e = 0; e < elArr.length; e++) {
-        //Create an array to house the HTML
-        var bodyElArr = [];
-
-        if (typeof elArr[e].triggerObj === "object") {
-            if (elArr[e].triggerObj.triggerType.localeCompare("opens_enable") === 0) {
-                switch (elArr[e].triggerObj.controlType) {
+const CreateBodyEls = (elArr, appID) => {
+    
+    //Create an array to house the HTML
+    let bodyElArr = elArr.map(e => {
+        if (typeof e.triggerObj === "object"){
+            if (e.triggerObj.triggerType.localeCompare("opens_enable") === 0){
+                switch(e.triggerObj.controlType){
                     case "email":
-                        if (!NullOrEmptyCheck(elArr[e].triggerObj.answer)) {
+                        if (!NullOrEmptyCheck(e.triggerObj.answer)){
+                            e.childElsArr.forEach(c => {
+                                c.isEnabled = true;
+                            });
+                            
+                            let control = outputControl(e.triggerObj, appID);
 
-                            for (var c = 0; c < elArr[e].childElsArr.length; c++) {
-                                elArr[e].childElsArr[c].isEnabled = true;
-                            }
-
-                            var control = outputControl(elArr[e].triggerObj, appID);
-
-                            bodyElArr.push("<li id='" + elArr[e].triggerObj.id + "-div' class='" + elArr[e].triggerObj.gridCount + "'>");
-                            bodyElArr.push(control);
-                            bodyElArr.push("</li>");
+                            return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                                    ${control}
+                                    </li>`;
                         }
                         else {
+                            e.childElsArr.forEach(c => {
+                                c.isEnabled = false;
 
-                            for (var c = 0; c < elArr[e].childElsArr.length; c++) {
-                                elArr[e].childElsArr[c].isEnabled = false;
-
-                                if (elArr[e].childElsArr[c].controlType.localeCompare("radio") === 0) {
-                                    if (elArr[e].childElsArr[c].answer.localeCompare("Paper/Mail") === 0 || 
-                                        elArr[e].childElsArr[c].answer.localeCompare("Electronically") === 0
-                                    ) {
-                                        elArr[e].childElsArr[0].responses[1].isTrigger = true;
+                                if(c.controlType.localeCompare("radio") === 0){
+                                    if(c.answer.localeCompare("Paper/Mail") === 0 ||
+                                        c.answer.localeCompare("Electronically") === 0){
+                                        c.responses[1].isTrigger = true;
                                     }
-                                    else {
-                                        elArr[e].childElsArr[0].responses[0].isTrigger = true;
+                                    else{
+                                        c.responses[0].isTrigger = true;
                                     }
                                 }
-                            }
+                            });
 
-                            var control = outputControl(elArr[e].triggerObj, appID);
+                            let control = outputControl(e.triggerObj, appID);
 
-                            bodyElArr.push("<li id='" + elArr[e].triggerObj.id + "-div' class='" + elArr[e].triggerObj.gridCount + "'>");
-                            bodyElArr.push(control);
-                            bodyElArr.push("</li>");
-
+                            return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                                    ${control}
+                                    </li>`;
                         }
-                        break;
                     case "checkbox":
-                        if ($("#" + elArr[e].id).is(":checked")) {
-                            for (var c = 0; c < elArr[e].childElsArr.length; c++) {
-                                elArr[e].childElsArr[c].isEnabled = true;
-                            }
+                        if ($("#" + e.id).is(":checked")){
+                            e.childElsArr.forEach(c => {
+                                c.isEnabled = true;
+                            });
 
-                            var control = outputControl(elArr[e].triggerObj, appID);
+                            let control = outputControl(e.triggerObj, appID);
 
-                            bodyElArr.push("<li id='" + elArr[e].triggerObj.id + "-div' class='" + elArr[e].triggerObj.gridCount + "'>");
-                            bodyElArr.push(control);
-                            bodyElArr.push("</li>");
+                            return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                                    ${control}
+                                    </li>`;
                         }
                         else {
-                            for (var c = 0; c < elArr[e].childElsArr.length; c++) {
-                                elArr[e].childElsArr[c].isEnabled = false;
-                            }
+                            e.childElsArr.forEach(c => {
+                                c.isEnabled = false;
+                            });
 
-                            var control = outputControl(elArr[e].triggerObj, appID);
+                            let control = outputControl(e.triggerObj, appID);
 
-                            bodyElArr.push("<li id='" + elArr[e].triggerObj.id + "-div' class='" + elArr[e].triggerObj.gridCount + "'>");
-                            bodyElArr.push(control);
-                            bodyElArr.push("</li>");
+                            return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                                    ${control}
+                                    </li>`;
                         }
-                        break;
                 }
-            }
-            else {
-                var tempObj = TriggerChildrenSeparator(elArr[e]);
-
-                bodyElArr.push(CreateTriggerEls(tempObj));
+            } else {
+               return CreateTriggerEls(TriggerChildrenSeparator(e));
             }
         }
-        else {
-            var control = outputControl(elArr[e], appID);
+        else{
+            var control = outputControl(e, appID);
 
-            if (elArr[e].id !== undefined && elArr[e].id.indexOf("PAG") !== -1) {
+            if (e.id !== undefined && e.id.indexOf("PAG") !== -1){
                 if (control !== undefined) {
-                    bodyElArr.push("<li id='" + elArr[e].id + "-div' class='" + elArr[e].gridCount + "'>");
-                    bodyElArr.push(control);
-                    bodyElArr.push("</li>");
+                    return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                            ${control}
+                            </li>`;
                 }
-            }
-            else {
-                if (control !== undefined) {
-                    bodyElArr.push("<li id='" + elArr[e].id + "-div' class='" + elArr[e].gridCount + "'>");
-                    bodyElArr.push(control);
-                    bodyElArr.push("</li>");
+                else{
+                    return `<li id='${e.triggerObj.id}-div' class='${e.triggerObj.gridCount}'>
+                            ${control}
+                            </li>`;
                 }
             }
         }
+    });
 
-        //Create an HTML from the above array
-        var bodyElHTML = CreateElement(bodyElArr);
-
-        //Save it to the htmlData body array for future use
-        data.htmlData.push(bodyElHTML);
-    }
+    //Save it to the htmlData body array for future use
+    data.htmlData.push(bodyElArr);
 };
 
 const RemoveFromChildTriggerList = (trigObj, ids) =>{
