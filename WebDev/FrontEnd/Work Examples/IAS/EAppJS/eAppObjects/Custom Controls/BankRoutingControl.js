@@ -1,17 +1,5 @@
-﻿function BankRoutingController(
-    labelComp,
-    noteComp,
-    inputId,
-    inputClass,
-    inputName,
-    inputValue,
-    placeholderValue,
-    required,
-    enabled,
-    rulesMessage,
-    routing
-) {
-    function BankRoutingObj(
+﻿class BankRoutingObj{
+    constructor(
         objId,
         objClass,
         objName,
@@ -31,47 +19,56 @@
         this.brIsEnabled = isEnabled === true ? "" : "disabled";
         this.rulseMsg = !NullOrEmptyCheck(rulesmsg) ? rulesmsg.split("|") : "";
         this.brIsRouting = isRouting === true ? true : false;
-    }
+    };
+};
 
-    var labelCompVar = !NullOrEmptyCheck(labelComp) ? labelComp : "";
-    var noteCompVar = !NullOrEmptyCheck(noteComp) ? noteComp : "";
-
-    function CreateBankRoutingInput(brObj) {
-        let inputArr = [];
-        let reqText = "";
+const BankRoutingController = (
+    labelComp,
+    noteComp,
+    inputId,
+    inputClass,
+    inputName,
+    inputValue,
+    placeholderValue,
+    required,
+    enabled,
+    rulesMessage,
+    routing
+) => {
+    
+    const CreateBankRoutingInput = (brObj) => {
+        let reqText, bankingOut = "";
 
         if (brObj.rulseMsg.length > 0) {
             reqText = AlertController(brObj.rulseMsg[0], brObj.rulseMsg[1]);
         }
 
-        inputArr.push("<div class='input-container'>");
         if (brObj.brIsRouting === true) {
-            inputArr.push("<input type='text' id='" + brObj.brId + "' class='" + brObj.brClass + "' name='" + brObj.brName + "' placeholder='" + brObj.brPlaceholder + "' value='" + brObj.brValue + "' min='0' max='999999999' maxlength='9' oninput='maxLengthCheck(this)' onblur='bankingRoutingCheck(this.id, true)'>");
+            bankingOut =`<input type='text' id='${brObj.brId}' class='${brObj.brClass}' name='${brObj.brName}' placeholder='${brObj.brPlaceholder}' value='${brObj.brValue}" +  + "' min='0' max='999999999' maxlength='9' oninput='maxLengthCheck(this)' onblur='bankingRoutingCheck(this.id, true)'></input>`;
         }
         else {
-            inputArr.push("<input type='text' id='" + brObj.brId + "' class='" + brObj.brClass + "' name='" + brObj.brName + "' placeholder='" + brObj.brPlaceholder + "' value='" + brObj.brValue + "' min='0' max='99999999999999999' maxlength='17' oninput='maxLengthCheck(this)' onblur='bankingRoutingCheck(this.id, false)'>");
+            bankingOut = `<input type='text' id='${brObj.brId}' class='${brObj.brClass}' name='${brObj.brName}' placeholder='${brObj.brPlaceholder}' value='${brObj.brValue}' min='0' max='99999999999999999' maxlength='17' oninput='maxLengthCheck(this)' onblur='bankingRoutingCheck(this.id, false)'>`;
         }
-        inputArr.push("<div id='bankInfo'></div>");
-        inputArr.push("<div id='" + brObj.brId + "-alertDiv'>" + reqText + "</div>");
-        inputArr.push("</div>");
 
-        return CreateElement(inputArr);
+        return `<div class='input-container'>
+                ${bankingOut}
+                <div id='bankInfo'></div>
+                <div id='${brObj.brId}-alertDiv'>${reqText}</div>
+                </div>`;
     }
 
-    function CreateBankRoutingContainer(
+    const CreateBankRoutingContainer = (
         labelComp,
         noteComp,
         brEl
-    ) {
-        var fullInputEl = [];
+    ) => {
+        let routingOut = CreateBankRoutingInput(brEl);
 
-        fullInputEl.push("<div id='" + brEl.brId + "-container'>");
-        fullInputEl.push(labelComp);
-        fullInputEl.push(noteComp);
-        fullInputEl.push(CreateBankRoutingInput(brEl));
-        fullInputEl.push("</div>");
-
-        return CreateElement(fullInputEl);
+        return `<div id='${brEl.brId}-container'>
+                ${labelComp}
+                ${noteComp}
+                ${routingOut}
+                </div>`;
     }
 
     return CreateBankRoutingContainer(
@@ -92,7 +89,7 @@
 };
 
 
-function bankingRoutingCheck(id, isRoutingNum) {
+const bankingRoutingCheck = (id, isRoutingNum) => {
 
     var itemVal = $("#" + id).val();
 

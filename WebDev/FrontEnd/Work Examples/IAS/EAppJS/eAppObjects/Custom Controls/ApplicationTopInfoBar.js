@@ -1,10 +1,10 @@
-﻿function ApplicaitonTopInfoBarController(
+﻿const ApplicaitonTopInfoBarController = (
     page,
     first,
     mid,
     last
-) {
-    function PageOutFull(pre) {
+) => {
+    const PageOutFull = (pre) => {
         switch (pre) {
             case "PER":
                 return "Personal";
@@ -44,29 +44,28 @@
                 return "Upload Documents";
             case "FAQ":
                 return "Frequently Asked Questions";
-        }
+        };
     }
 
-    function AppTopInfoBar(
+    const AppTopInfoBar = (
         currPg,
         fName,
         mInit,
         lName
-    ) {
-        var output = [];
+    ) => {
 
-        output.push("<aside class='page-title col-md-4'>")
-        output.push("<p>" + PageOutFull(currPg) + "</p>");
-        output.push("</aside>");
-        output.push("<span class='col-md-2'></span>");
-        output.push("<aside class='applicant-name col-md-6'>");
-        output.push("<p>Applicant's Name: </p>");
-        output.push("<p id='app-first-name'>" + fName + "</p>");
-        output.push("<p id='app-mid-init'>" + mInit + "</p>");
-        output.push("<p id='app-last-name'>" + lName + "</p>");
-        output.push("</aside>");
+        let currPgOut = PageOutFull(currPg);
 
-        return CreateElement(output);
+        return `<aside class='page-title col-md-4'>
+                <p>${currPgOut}</p>
+                </aside>
+                <span class='col-md-2'></span>
+                <aside class='applicant-name col-md-6'>
+                <p>Applicant's Name: </p>
+                <p id='app-first-name'>${fName}</p>
+                <p id='app-mid-init'>${mInit}</p>
+                <p id='app-last-name'>${lName}</p>
+                </aside>`;
     }
 
     return AppTopInfoBar(

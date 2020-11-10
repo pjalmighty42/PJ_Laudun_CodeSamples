@@ -1,73 +1,67 @@
-﻿function TopNavigationController(
+﻿const TopNavigationController = (
     agentName,
     planName,
     monthlyAmount,
     yearlyAmount,
     currState,
     effectiveDate
-) {
+) => {
 
-    function CreateTopNav(
+    const CreateTopNav = (
         aName,
         pName,
         mthAmt,
         yrAmt,
         cState,
         eDate
-    ) {
-        var topNav = [];
+    ) => {
+        let answerDate = new Date(eDate);
+        let stringEDate = ((answerDate.getMonth() + 1) + '/' + answerDate.getDate() + '/' + answerDate.getFullYear());
 
-        var answerDate = new Date(eDate);
-        var stringEDate = ((answerDate.getMonth() + 1) + '/' + answerDate.getDate() + '/' + answerDate.getFullYear());
+        let planOut;
 
-        topNav.push("<li class='agent-area col-3'>");
-        topNav.push("Agent: " + aName);
-        topNav.push("</li>");
-        topNav.push("<li class='plan-area col-4'>");
         if (!NullOrEmptyCheck(pName)) {
-            topNav.push("Plan: " + pName + "</div><div>Annual: " + yrAmt + " - Monthly: " + mthAmt);
+            planOut = `Plan: ${pName}</div><div>Annual: ${yrAmt} - Monthly: ${mthAmt}`;
         }
         else {
-            topNav.push("</div><div>Annual: " + yrAmt + " - Monthly: " + mthAmt)
+            planOut = `</div><div>Annual: ${yrAmt} - Monthly: ${mthAmt}`;
         }
-        topNav.push("</li>");
-        topNav.push("<li class='state-area col-2'>");
-        topNav.push("State: " + cState);
-        topNav.push("</li>");
-        topNav.push("<li class='eff-date-area col-3'>");
-        topNav.push("Effective Date: " + stringEDate);
-        topNav.push("</li>");
 
-        return CreateElement(topNav);
+        return `<li class='agent-area col-3'>
+                Agent: ${aName} 
+                </li>
+                <li class='plan-area col-4'>
+                ${planOut}
+                </li>
+                <li class='state-area col-2'>
+                State: ${cState} 
+                </li>
+                <li class='eff-date-area col-3'>
+                Effective Date: ${stringEDate} 
+                </li>`;
     }
 
-    function TopNavContainer(
+    const TopNavContainer = (
         aName,
         pName,
         mthAmt,
         yrAmt,
         cState,
         eDate
-    ) {
+    ) => {
 
-        var topNavOut = [];
-
-        topNavOut.push("<ul class='app-sub-menu row'>");
-
-        topNavOut.push(CreateTopNav(
-                aName,
-                pName,
-                mthAmt,
-                yrAmt,
-                cState,
-                eDate
-            )
+        let topNavOut = CreateTopNav(
+            aName,
+            pName,
+            mthAmt,
+            yrAmt,
+            cState,
+            eDate
         );
 
-        topNavOut.push("</ul>");
-
-        return CreateElement(topNavOut);
-
+        return `<ul class='app-sub-menu row'>
+                ${topNavOut}
+                </ul>`;
     }
 
     return TopNavContainer(

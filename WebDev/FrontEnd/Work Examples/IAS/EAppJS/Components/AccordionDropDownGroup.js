@@ -28,7 +28,7 @@
     }
 }
 
-function AccordionDropDownGroupController(
+const AccordionDropDownGroupController = (
     labelComp,
     noteComp,
     selectIdName,
@@ -43,61 +43,45 @@ function AccordionDropDownGroupController(
     contextVal,
     rulesMessage,
     gridCount
-){
+) => {
     //This will create the DropDown element (aka- the trigger for the Accordion)
-    function CreateDDGDropdownElement(dropDownGroupObj){
-        let dropdownobject = [];
+    const CreateropdownElement = (dropDownGroupObj) => {
         let erOutput = EnableAndRequiredCheck(dropDownGroupObj.isEnabled, dropDownGroupObj.isRequired);
 
-        dropdownobject.push("<select id='" + dropDownGroupObj.selectIdName + "-DropDownSel' " + dropDownGroupObj.selectClassName + " onchange='rulesCheckDropdownTriggerEl(this)' " + erOutput + ">");
-        
-        //Add the passed options list
-        for (let i = 0; i < dropDownGroupObj.options.length; i++) {
-            if (i === dropDownGroupObj.triggerVal) {
-                if (dropDownGroupObj.options[i].value.localeCompare(dropDownGroupObj.answer) === 0) {
-                    dropdownobject.push("<option " + dropDownGroupObj.optionsClassName + " is-trigger='true' selected>" + dropDownGroupObj.options[i].value + "</option>");
+        let optionOut = dropDownGroupObj.options.map((d, i) => {
+            if(i === dropDownGroupObj.triggerVal){ //Output for trigger options (options that could enable/open other controls)
+                if(d.value.localeCompare(dropDownGroupObj.answer) === 0){
+                    return `<option ${dropDownGroupObj.optionsClassName} is-trigger='true' selected>${d.value}</option>`;
                 }
-                else {
-                    dropdownobject.push("<option " + dropDownGroupObj.optionsClassName + " is-trigger='true'>" + dropDownGroupObj.options[i].value + "</option>");
+                else{
+                    return `<option ${dropDownGroupObj.optionsClassName} is-trigger='true'>${d.value}</option>`;
                 }
             }
-            else {
-                if (dropDownGroupObj.options[i].value.localeCompare(dropDownGroupObj.answer) === 0) {
-                    dropdownobject.push("<option " + dropDownGroupObj.optionsClassName + " is-trigger='false' selected>" + dropDownGroupObj.options[i].value + "</option>");
+            else{
+                //Else output for normal options (options that do no trigger anything)
+                if(d.value.localeCompare(dropDownGroupObj.answer) === 0){
+                    return `<option ${dropDownGroupObj.optionsClassName} is-trigger='false' selected>${d.value}</option>`;
                 }
-                else {
-                    dropdownobject.push("<option " + dropDownGroupObj.optionsClassName + " is-trigger='false'>" + dropDownGroupObj.options[i].value + "</option>");
+                else{
+                    return `<option ${dropDownGroupObj.optionsClassName} is-trigger='false'>${d.value}</option>`;
                 }
             }
-        }
+        });
 
-        dropdownobject.push("</select>");
-
-        //Assign to variable
-        return dropdownobject;
+        return `<select id='${dropDownGroupObj.selectIdName}-DropDownSel' ${dropDownGroupObj.selectClassName} onchange='rulesCheckDropdownTriggerEl(this)' ${erOutput}>
+                ${optionOut}
+                </select>`;
     };
 
     let accordion = "";
 
-    function CreateAccordion (selectIdName, labelComp, noteComp, ddgObj, accordPanelObj, gridCount){
+    const CreateAccordion = (selectIdName, labelComp, noteComp, ddgObj, accordPanelObj, gridCount) => {
         //This will create the actual Accordion element (trigger plus the items that will open on trigger)
-        let accordionObject = [];
         let reqText = "";
 
         if (ddgObj.rulseMsg.length > 0) {
             reqText = AlertController(ddgObj.rulseMsg[0], ddgObj.rulseMsg[1]);
         }
-
-        //Else create the Accordion
-        accordionObject.push("<div id='" + selectIdName + "-div' class='" + gridCount + "'>");
-
-        //If a Label is needed, create a Label 
-        accordionObject.push(labelComp);
-
-        //If a Sub-Title/Note is needed, create a Sub-Title/Note
-        accordionObject.push(noteComp);
-
-        accordionObject.push("<div id='" + selectIdName + "-alertDiv'>" + reqText + "</div>");
 
         let accrdPanObjs = [];
 
@@ -110,25 +94,29 @@ function AccordionDropDownGroupController(
             }
         }
 
-        accordionObject.push("<div id='" + selectIdName + "-ParentID'>");
-        accordionObject.push("<div class='card'>");
-        accordionObject.push("<div class='card-header'>");
-        accordionObject.push(CreateDDGDropdownElement(ddgObj));
-        accordionObject.push("</div>");
-        accordionObject.push("<div id='" + selectIdName + "-DDAccordID' class ='collapse' data-parent='#" + selectIdName + "-ParentID'>");
-        accordionObject.push("<div class='card-body'>");
-        accordionObject.push(CreateElement(accrdPanObjs));
-        accordionObject.push("</div>");
-        accordionObject.push("</div>");
-        accordionObject.push("</div>");
-        accordionObject.push("</div>");
+        let ddEl = CreateropdownElement(ddgObj);
 
-        accordionObject.push("</div>");
-
-        return CreateElement(accordionObject);
+        return `<div id='${selectIdName}-div' class='${gridCount}'>
+                    ${labelComp}
+                    ${noteComp}
+                    <div id='${selectIdName}-ParentID'>
+                        <div id='${selectIdName}-alertDiv'>${reqText}</div>
+                            <div class='card'>
+                                <div class='card-header'>
+                                ${ddEl}
+                                </div>
+                                <div id='${selectIdName}-DDAccordID' class ='collapse' data-parent='#${selectIdName}-ParentID'>
+                                    <div class='card-body'>
+                                        ${accrdPanObjs}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
     };
 
-    accordion = CreateAccordion(
+    return CreateAccordion(
         selectIdName,
         labelComp,
         noteComp,
@@ -149,21 +137,18 @@ function AccordionDropDownGroupController(
         accordionPanelObject,
         gridCount);
 
-    //AccordionCollapseSwitchDropDown(triggerVal, selectIdName, selectIdName + "-DropDownSel", selectIdName + "-DDAccordID");
-
-    return accordion;
 };
 
-function ApplyDDLAccord(data) {
-    function AccordionCollapseSwitchDropDown(
+const ApplyDDLAccord = (data) => {
+    const AccordionCollapseSwitchDropDown = (
         dropDownID,
         accordionID
-    ) {
+    ) => {
         $(document).ready(function () {
 
-            var selOpt = $("#" + dropDownID + " option:selected");
+            let selOpt = $("#" + dropDownID + " option:selected");
 
-            var isTrigger = selOpt.attr('is-trigger') === 'true' ? true : false;
+            let isTrigger = selOpt.attr('is-trigger') === 'true' ? true : false;
 
             if (isTrigger) {
                 $("#" + accordionID).collapse('show');
