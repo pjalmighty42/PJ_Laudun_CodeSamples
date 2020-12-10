@@ -1,0 +1,15 @@
+#bh-appts-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        margin-left: auto;
+    }
+    table{
+        width: 70em;
+        max-width: 70em;
+        th{
+            text-align: center;
+        }
+    }
+}

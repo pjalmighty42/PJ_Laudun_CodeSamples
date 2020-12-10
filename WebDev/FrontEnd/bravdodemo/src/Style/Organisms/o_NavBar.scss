@@ -1,0 +1,21 @@
+@import './baseVars.scss';
+
+#bh-app-nav{
+    background-color: $redLight !important;
+    border-bottom: 3px solid $redDark !important;
+    ul{
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .btn-container{
+            padding: 15px 0;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        .pull-left{
+            margin-left: 0;
+        }
+    }
+}

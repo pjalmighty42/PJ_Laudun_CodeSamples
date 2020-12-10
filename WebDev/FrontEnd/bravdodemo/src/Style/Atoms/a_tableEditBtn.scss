@@ -1,0 +1,14 @@
+@import '../baseVars.scss';
+
+.edit-btn{
+    background-color: #fff !important;
+    color: $blueDark !important;
+    border: 2px solid $blueDark !important;
+    transition: .3s;
+}
+
+.edit-btn:hover{
+    background-color: $blueDark!important;
+    color: #fff !important;
+    border: 2px solid $blueDark !important;
+}

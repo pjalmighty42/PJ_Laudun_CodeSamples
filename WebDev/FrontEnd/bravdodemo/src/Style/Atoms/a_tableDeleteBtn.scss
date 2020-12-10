@@ -1,0 +1,14 @@
+@import '../baseVars.scss';
+
+.del-btn{
+    background-color: $redLight !important;
+    color: $baseWhite !important;
+    border: 2px solid $redLight !important;
+    transition: .3s;
+}
+
+.del-btn:hover{
+    background-color: $redDark!important;
+    color: $baseWhite !important;
+    border: 2px solid $redDark !important;
+}

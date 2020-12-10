@@ -1,0 +1,24 @@
+@import '../baseVars.scss';
+
+#bh-appts-main{
+    padding: 1em;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    background: rgb(246,246,246);
+    background: linear-gradient(335deg, rgba(246,246,246,0.24701218377976186) 0%, rgba(253,253,253,1) 51%, rgba(245,245,245,0.16577969078256305) 100%);
+    align-items: center;
+    #top-container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        h1{
+            margin-bottom: 0;
+            margin-left: auto;
+        }
+        button{
+            margin-left: 0;
+            margin-bottom: 1em;
+        }
+    }
+}
