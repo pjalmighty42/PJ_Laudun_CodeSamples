@@ -1,0 +1,14 @@
+.user-table-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.table-cont-main{
+    justify-content: center;
+    display: flex;
+}
+
+.table-cont-main table {
+    width: 75%;
+}

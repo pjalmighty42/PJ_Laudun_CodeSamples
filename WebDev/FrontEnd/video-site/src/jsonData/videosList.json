@@ -1,0 +1,23 @@
+[
+  {
+      "authId" : "",
+      "vidId" : "",
+      "favUserIds" : "",
+      "url" : "",
+      "screenShot" : "",
+      "title" : "",
+      "subTitle" : "",
+      "datePosted" : "",
+      "tags" : "",
+      "logoIds" : "",
+      "spptText" : "",
+      "vidInfo" : "",
+      "vidCat" : "",
+      "vidSens" : "",
+      "views" : "",
+      "likes" : "",
+      "dislikes" : "",
+      "reported" : "",
+      "reportedMsgs" : ""
+  }
+]

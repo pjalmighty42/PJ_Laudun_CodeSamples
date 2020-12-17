@@ -4,20 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import User from '../src/classes/user';
-
-//User
-///Site = store
-///GET_USER_BYID = action
-///LoginUser = Reducer
-
-//Videos
-///Site = store
-///GET_VIDEO_LIST_BYRANGE = action
-///GET_VIDEO_BYID = action
-///GetVideoCarousel = Reducer
-///PlayVideo = Reducer
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

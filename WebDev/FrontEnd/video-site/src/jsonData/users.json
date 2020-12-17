@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "name": "Rando User 1",
+    "password": "123testUser@!",
+    "userImg": "",
+    "selColor": "dark"
+  },
+  {
+    "id": 1,
+    "name": "Rando User 2",
+    "password": "1234testUser@!",
+    "userImg": "",
+    "selColor": "light"
+  }
+]

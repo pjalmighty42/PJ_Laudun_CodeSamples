@@ -1,0 +1,3 @@
+export const ICE_CREAM_ACTIONS = {
+    BUY_ICE_CREAM: 'BUY_ICE_CREAM'
+};
