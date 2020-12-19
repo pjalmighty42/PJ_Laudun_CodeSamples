@@ -1,0 +1,461 @@
+{
+  "stores": [
+  {
+    "id": 0,
+    "name": "Lou's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Monty's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Claire's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Kenny's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Larry's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Clarke's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Allen's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Brian's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Marcus's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Yanni's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Quincy's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Erica's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Uma's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Brenda's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Terri's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Orion's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Karen's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Sofi's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Vinny's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Jan's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Lonni's Shop",
+    "specializations": "cakes",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "carr": 0,
+        "cheese": 0
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Sean's Shop",
+    "specializations": "candy",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "hard": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Sharon's Shop",
+    "specializations": "shake",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Ronnie's Shop",
+    "specializations": "ic",
+    "location-dist-mod": 0,
+    "supply-amt": [
+      {
+        "van": 0,
+        "choc": 0,
+        "straw": 0,
+        "blue": 0,
+        "cherry": 0,
+        "orange": 0
+      }
+    ]
+  }
+  ],
+  "special": [
+    {
+      "cakes": 
+      [
+        { "id": 0, "name": "Strawberry Shortcake", "priceInc": 0.25 },
+        { "id": 1, "name": "Blueberry Shortcake", "priceInc": 0.25 },
+        { "id": 2, "name": "Cherry Shortcake", "priceInc": 0.25 },
+        { "id": 3, "name": "Vanilla Shortcake", "priceInc": 0.25 },
+        { "id": 4, "name": "Chocolate Shortcake", "priceInc": 0.25 },
+        { "id": 5, "name": "Tiramisu", "priceInc": 0.5 },
+        { "id": 6, "name": "Strawberry Cheesecake", "priceInc": 0.35 },
+        { "id": 7, "name": "Blueberry Cheesecake", "priceInc": 0.35 },
+        { "id": 8, "name": "Cherry Cheesecake", "priceInc": 0.35 },
+        { "id": 9, "name": "Vanilla Cheesecake", "priceInc": 0.35 },
+        { "id": 10, "name": "Chocolate Cheesecake", "priceInc": 0.35 },
+        { "id": 11, "name": "Ice Cream Cake", "priceInc": 0.4 },
+        { "id": 12, "name": "Marriage Cake", "priceInc": 0.75 },
+        { "id": 13, "name": "Birthday Cheesecake", "priceInc": 0.6 }
+      ]
+    },
+    {
+      "shakes-ic": 
+      [
+        { "id": 0, "name": "Vanilla-Chocolate Swirl", "priceInc": 0.25 },
+        { "id": 1, "name": "Vanilla-Strawberry Swirl", "priceInc": 0.25 },
+        { "id": 2, "name": "Vanilla-Blueberry Swirl", "priceInc": 0.25 },
+        { "id": 3, "name": "Vanilla-Cherry Swirl", "priceInc": 0.25 },
+        { "id": 4, "name": "Vanilla-Orange Swirl", "priceInc": 0.25 },
+        { "id": 5, "name": "Double Chocolate", "priceInc": 0.3 },
+        { "id": 6, "name": "Triple Chocolate", "priceInc": 0.3 },
+        { "id": 7, "name": "Mega Chocolate", "priceInc": 0.5 },
+        { "id": 8, "name": "Chocolate Mint", "priceInc": 0.35 },
+        { "id": 9, "name": "Strawberry Sherbert", "priceInc": 0.4 },
+        { "id": 10, "name": "Blueberry Sherbert", "priceInc": 0.4 },
+        { "id": 11, "name": "Cherry Sherbert", "priceInc": 0.4 },
+        { "id": 12, "name": "Orange Sherbert", "priceInc": 0.4 },
+        { "id": 13, "name": "Rootbeer", "priceInc": 0.5 },
+        { "id": 14, "name": "Sundae", "priceInc": 0.75 },
+        { "id": 15, "name": "Chocolate Sundae", "priceInc": 0.5 }
+      ]
+    },
+    {
+      "candy": 
+      [
+        { "id": 0, "name": "Vanilla-Chocolate Swirl", "priceInc": 0.25 },
+        { "id": 1, "name": "Vanilla-Strawberry Swirl", "priceInc": 0.25 },
+        { "id": 2, "name": "Vanilla-Blueberry Swirl", "priceInc": 0.25 },
+        { "id": 3, "name": "Vanilla-Cherry Swirl", "priceInc": 0.25 },
+        { "id": 4, "name": "Vanilla-Orange Swirl", "priceInc": 0.25 },
+        { "id": 5, "name": "Chocolate-Strawberry Swirl", "priceInc": 0.25 },
+        { "id": 6, "name": "Chocolate-Blueberry Swirl", "priceInc": 0.25 },
+        { "id": 7, "name": "Chocolate-Cherry Swirl", "priceInc": 0.25 },
+        { "id": 8, "name": "Chocolate-Orange Swirl", "priceInc": 0.25 },
+        { "id": 9, "name": "Chocolate Mint", "priceInc": 0.35 },
+        { "id": 10, "name": "Vanilla Mint", "priceInc": 0.35 },
+        { "id": 11, "name": "Rootbeer", "priceInc": 0.5 },
+        { "id": 12, "name": "Cotton Candy", "priceInc": 0.5 },
+        { "id": 13, "name": "Sea Salt", "priceInc": 0.75 }
+      ]
+    }
+  ]
+}

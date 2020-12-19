@@ -1,20 +1,26 @@
+import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import store from '../src/redux/store';
-import CakeContainer from '../src/containers/CakeContainer';
-import CakeContainerDos from './containers/CakeContainerDos';
-import IceCreamContianer from './containers/IceCreamContainer';
-import ShakeContainer from './containers/ShakeContainer';
-import UserContainer from './containers/UserContainer';
-import UserInput from './containers/UserInput';
+
+import MainPage from './containers/pages/MainPage';
+import DecisionPage from './containers/pages/DecisionPage';
+import StorePage from './containers/pages/StorePage';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="App">
-        <UserInput />
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+              <Route path="/" exact component={MainPage}/>
+              <Route path="/main" component={DecisionPage}/>
+              <Route path="/store/:id" component={StorePage}/>
+          </Switch>
+        </div>
+      </Router>
     </Provider>
     
   );
