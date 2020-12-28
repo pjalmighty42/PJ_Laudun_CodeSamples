@@ -1,0 +1,4 @@
+export const STORE_TYPES = {
+    GET_STORE_LIST: 'GET_STORE_LIST',
+    GET_STORE_BY_ID: 'GET_STORE_BY_ID'
+};
