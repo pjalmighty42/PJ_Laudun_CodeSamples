@@ -16,6 +16,7 @@ const storeReducer = (state = initialState, action) => {
             };
         case STORE_TYPES.GET_STORE_BY_ID:
             return {
+                ...state,
                 selStore: action.payload
             };
         default:
