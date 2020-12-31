@@ -1,0 +1,31 @@
+@media screen and (max-width: 950px) {
+    .navbar{
+        .container-fluid{
+            flex-direction: row-reverse;
+
+            #navbarToggler{
+                .navbar-nav {
+                    padding-left: 0;
+                    margin-bottom: 0;
+                    list-style: none;
+                    .nav-item{
+                        display: flex;
+                        flex-direction: column;
+                        #navbarDropdownMenuLink{
+                            margin-left: auto;
+                        }
+                        .dropdown-menu{
+                            padding: 0;
+                            border: none;
+                            border-radius: 0;
+
+                            .dropdown-item:hover{
+                                background-color: #ddd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

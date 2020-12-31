@@ -6,15 +6,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -23,15 +21,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -40,14 +36,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -56,14 +50,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -72,15 +64,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -89,15 +79,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -106,14 +94,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -122,14 +108,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -138,15 +122,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -155,15 +137,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -172,14 +152,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -188,14 +166,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -204,15 +180,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -221,15 +195,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -238,14 +210,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -254,14 +224,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -270,15 +238,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -287,15 +253,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -304,14 +268,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -320,14 +282,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -336,15 +296,13 @@
     "specializations": "cakes",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "carr": 0,
-        "cheese": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"carr": 0},
+      {"cheese": 0}
     ]
   },
   {
@@ -353,15 +311,13 @@
     "specializations": "candy",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "hard": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0},
+      {"hard": 0}
     ]
   },
   {
@@ -370,14 +326,12 @@
     "specializations": "shake",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   },
   {
@@ -386,14 +340,12 @@
     "specializations": "ic",
     "location-dist-mod": 0,
     "supply-amt": [
-      {
-        "van": 0,
-        "choc": 0,
-        "straw": 0,
-        "blue": 0,
-        "cherry": 0,
-        "orange": 0
-      }
+      {"van": 0},
+      {"choc": 0},
+      {"straw": 0},
+      {"blue": 0},
+      {"cherry": 0},
+      {"orange": 0}
     ]
   }
   ],

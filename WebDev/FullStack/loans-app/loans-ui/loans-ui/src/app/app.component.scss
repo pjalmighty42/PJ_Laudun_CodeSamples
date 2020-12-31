@@ -1,0 +1,92 @@
+
+ #menu-toggle{
+    color:white;
+    position: absolute;
+    top: 46px;
+    left: -45.75px;
+    transform: rotate(90deg);
+    background: rgb(68, 65, 95);
+}
+#wrapper {
+    padding-left: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 0px;
+}
+
+
+#sidebar-wrapper {
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 86.5%;
+    margin-left: -250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgb(68, 65, 95);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+    
+    
+#wrapper.toggled #sidebar-wrapper {
+    width: 0px;
+}
+
+
+#page-content-wrapper {
+    width: auto;
+    position: absolute;
+    padding: 50px;
+}
+
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+    width:100%;
+}
+    
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
