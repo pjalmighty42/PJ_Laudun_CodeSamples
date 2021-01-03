@@ -26,21 +26,17 @@ export const fetchGameStoresList = () => {
         if(storeList.length > 0) {
             let storeListOut = storeList.map(store => {
                 store['location-dist-mod'] = randomNum(0, 150);
-<<<<<<< Updated upstream
                 return store;
             });
-=======
-                
-                store["supply-amt"].forEach(item => {
-                    item = randomNum(0, 15)
-                });
-                
-                return {
-                   store
-                }
+            store["supply-amt"].forEach(item => {
+                item = randomNum(0, 15)
             });
+            
+            return {
+               store
+            }
+        });
 
->>>>>>> Stashed changes
             dispatch(getStoresList(storeListOut));
         }
     };

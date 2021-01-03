@@ -10,9 +10,8 @@ import DecisionPage from './containers/pages/DecisionPage';
 import StorePage from './containers/pages/StorePage';
 
 const App = () => {
-  return (
-    <Provider store={store}>
-      <Router>
+  /** 
+   * <Router>
         <div className="App">
           <Switch>
               <Route path="/" exact component={MainPage}/>
@@ -21,8 +20,11 @@ const App = () => {
           </Switch>
         </div>
       </Router>
+  */
+  return (
+    <Provider store={store}>
+     
     </Provider>
-    
   );
 }
 

@@ -2,12 +2,6 @@ import React, { Fragment } from 'react';
 import '../styles/css/templates/resultstabletemplate.min.css';
 import '../styles/css/organisms/resultstableorganism.min.css';
 
-/*
-  Actually figured out this issue a while ago. I realized that 16.2's update of React
-  actually allows the Fragment call. This actually helps anytime I need to reiterate 
-  output of items. So I used the new Fragment feature to output table rows that have the 
-  various person's information. 
-*/
 const ResultsTable = (props) => {
   return (
     props.items.map(item => (

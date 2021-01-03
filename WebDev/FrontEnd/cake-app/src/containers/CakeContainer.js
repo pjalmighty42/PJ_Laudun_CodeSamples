@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { buyCake } from '../redux/index';
-
 
 const mapStateToProps = (state) => {
     return {
