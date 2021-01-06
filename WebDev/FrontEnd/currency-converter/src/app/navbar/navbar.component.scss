@@ -1,0 +1,15 @@
+header{
+    background-color: rgb(0, 158, 158);
+    padding: 15px;
+    nav{
+        a{
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            transition: .5s;
+        }
+        a:hover{
+            background-color:  rgb(0, 102, 102);
+        }
+    }
+}

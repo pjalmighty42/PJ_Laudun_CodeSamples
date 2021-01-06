@@ -1,0 +1,31 @@
+#converter-container {
+    height: 20em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3em;
+    background-color: #edfff9;
+    border-radius: 10px;
+
+    hr {
+        width: 95%;
+        border: 1px solid #407060;;
+    }
+    input {
+        width: 95%;
+        padding: .5em;
+        margin: 1em auto;
+        border:none;
+        border-bottom: 2px solid #90aeae;
+    }
+
+    ul{
+        list-style: none;
+        li:last-child{
+            font-size: 20px;
+            font-weight: bold;
+            color: #008aaa;
+        }
+    }
+}

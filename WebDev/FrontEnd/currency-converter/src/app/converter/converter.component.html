@@ -1,0 +1,15 @@
+<section id="converter-container" class="container">
+    <h1>Currency Converter</h1>
+    <hr />
+    <div id="converter-card">
+        <input type="number" placeholder="amount" [(ngModel)]="amount">
+        <ul>
+            <li>
+                <label>From </label> <span><b>{{from}}</b></span> &nbsp;<label>To </label> <span><b>{{to}}</b></span>
+            </li>
+            <li>
+                <b [style.color]="amount < 0 ? 'red' : '#008aaa'">{{amount.toFixed(2)}} {{from}} = {{convert().toFixed(2)}} {{to}}</b>
+            </li>
+        </ul>
+    </div>
+</section>
