@@ -1,4 +1,19 @@
+@import './variables.scss';
+
 html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .red{
+        color: $red;
+    }
+    .bg-light{
+        background-color: $white !important;
+        border-bottom: 14px solid $dark-blue;
+        @media screen and (max-width:767px){
+            background-color: $light-gray !important;
+        }
+    }
 }
