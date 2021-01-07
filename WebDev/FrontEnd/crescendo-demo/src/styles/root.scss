@@ -3,12 +3,25 @@
 @import './variables.scss';
 
 /*Atoms*/
+@import './Atoms/a_socialMediaBtns.scss';
+@import './Atoms/a_carouselCards.scss';
+@import './Atoms/a_insightCards.scss';
 
-/*Templates"/
+/*Molecules*/
+@import './Molecules/m_CallUsContainer.scss';
+@import './Molecules/m_SocialMediaLinksContainer.scss';
+@import './Molecules/m_TopFoldBG.scss';
+@import './Molecules/m_CarouselItem.scss';
+@import './Molecules/m_CommitmentBody.scss';
+@import './Molecules/m_InsightsMain.scss';
 
 /*Organisms*/
 @import './Organisms/o_NavBar.scss';
+@import './Organisms/o_Footer.scss';
+@import './Organisms/o_CommitmentSection.scss';
+@import './Organisms/o_InsightsSection.scss';
+@import './Organisms/o_UpcomingSection.scss';
 
-/*Molecules*/
+/*Templates"/
 
 /*Pages*/

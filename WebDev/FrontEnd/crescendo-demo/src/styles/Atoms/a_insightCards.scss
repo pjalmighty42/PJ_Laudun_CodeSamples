@@ -1,0 +1,82 @@
+@import '../variables.scss';
+
+.card-container{
+    width: 280px;
+    height: 270px;
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: $white;
+    img{
+        position: relative;
+        top: -270px;
+        width: 100%;
+        height: auto;
+        clip-path: polygon(28% 7%, 66% 7%, 93% 7%, 94% 71%, 71% 94%, 31% 94%, 6% 94%, 6% 30%);
+    }
+
+    .card-bg-lgt-blue{
+        background-color: $white;
+        border-bottom: 5px solid $light-blue;
+        h4{
+            color: $light-blue;
+            padding-top: 10.5em;
+            font-size: 1.25em;
+            font-weight: bold;
+            padding-left: 1em;
+            word-wrap: break-word;
+            padding-right: 3em;
+        }
+    }
+    .card-bg-md-blue{
+        background-color: $white;
+        border-bottom: 5px solid $med-blue;
+        h4{
+            color: $med-blue;
+            padding-top: 10.5em;
+            font-size: 1.25em;
+            font-weight: bold;
+            padding-left: 1em;
+            word-wrap: break-word;
+            padding-right: 3em;
+        }
+    }
+    .card-bg-dk-blue{
+        background-color: $white;
+        border-bottom: 5px solid $dark-blue;
+        h4{
+            color: $dark-blue;
+            padding-top: 10.5em;
+            font-size: 1.25em;
+            font-weight: bold;
+            padding-left: 1em;
+            word-wrap: break-word;
+            padding-right: 3em;
+        }
+    }
+    .card-bg-red{
+        background-color: $white;
+        border-bottom: 5px solid $red;
+        h4{
+            color: $red;
+            padding-top: 10.5em;
+            font-size: 1.25em;
+            font-weight: bold;
+            padding-left: 1em;
+            word-wrap: break-word;
+            padding-right: 3em;
+        }
+    }
+    .card-bg-green{
+        background-color: $white;
+        border-bottom: 5px solid $light-green;
+        h4{
+            color: $light-green;
+            padding-top: 10.5em;
+            font-size: 1.25em;
+            font-weight: bold;
+            padding-left: 1em;
+            word-wrap: break-word;
+            padding-right: 3em;
+        }
+    }
+}

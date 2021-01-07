@@ -1,0 +1,86 @@
+@import '../variables.scss';
+
+.top-fold-bg{
+    background-color: $light-blue;
+    background: rgb(20,80,210), url('/src/assets/Climbers-Big.jpg') no-repeat;
+    background: -moz-linear-gradient(106deg, rgba(20,80,210,0.773622828037465) 40%, rgba(0,212,255,0.1685808112307423) 71%, rgba(20,80,210,0.34785251991421573) 100%), url('/src/assets/Climbers-Big.jpg') no-repeat;
+    background: -webkit-linear-gradient(106deg, rgba(20,80,210,0.773622828037465) 40%, rgba(0,212,255,0.1685808112307423) 71%, rgba(20,80,210,0.34785251991421573) 100%), url('/src/assets/Climbers-Big.jpg') no-repeat;
+    background: linear-gradient(106deg, rgba(20,80,210,0.773622828037465) 40%, rgba(0,212,255,0.1685808112307423) 71%, rgba(20,80,210,0.34785251991421573) 100%), url('/src/assets/Climbers-Big.jpg') no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1450d2",endColorstr="#1450d2",GradientType=1); 
+    z-index: -1001;
+    background-attachment: fixed;
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.top-fold-mobile{
+    max-width: initial;
+    background-color: $light-blue;
+    height: 500px;
+    color: $white;
+    max-width: inherit;
+    padding: 2em 3em !important;
+    margin: 0 !important;
+    .mobile-pre-header {
+        font-size: 1.2em;
+    }
+    h1{
+        display: flex;
+        flex-direction: column;
+        font-size: 2em;
+        line-height: 1em;
+        margin-top: 1.75em;
+        border-bottom: 2px dotted $white;
+        .top-h1{
+            font-size: .75em;
+            font-weight: lighter;
+        }
+        .bot-h1{
+            word-wrap: break-word;
+            font-weight: bold;
+            font-size: 1.25em;
+            margin-bottom: .5em;
+        }
+    }
+    .vision-statement-list{
+        list-style: none;
+        padding: 0;
+        margin: .5em 0 0 0;
+        font-size: 1.25em;
+        font-weight: lighter;
+        line-height: 1.4em;
+        li{
+            p{
+                margin:0;
+            }
+        }
+    }
+}
+
+.top-fold-text {
+    position: absolute;
+    top: 225px;
+    color: $white;
+    h1{
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+    }
+    .vision-statement-list{
+        list-style: none;
+        padding: 0;
+        margin: .5em 0 0 0;
+        font-size: 1.5em;
+        font-weight: lighter;
+        line-height: 1.25em;
+        li{
+            p{
+                margin:0;
+            }
+        }
+    }
+}

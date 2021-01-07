@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+/*Normal Footer Settings*/
+.normal-footer-main{
+    background-color: $dark-gray;
+    .row{
+        padding-top: .75em;
+        padding-bottom: 1.25em;
+    }
+}
+
+/* Mobile Footer*/
+.mobile-footer-main{
+    .no-border{
+        border: none !important;
+        .priv-tou-div {
+            margin-top: 1em;
+            display: flex;
+            flex-direction: row;
+            .nav-link{
+                width: 70%;
+            }
+            .nav-link:first-child{
+                margin-right: 1em;
+            }
+        }
+    }
+}

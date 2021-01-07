@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.commitment-container{
+    background-color: $med-blue;
+    height: 400px;
+    max-height: 500px;
+    .container{
+        position: relative;
+        top: -334px;
+    }
+}

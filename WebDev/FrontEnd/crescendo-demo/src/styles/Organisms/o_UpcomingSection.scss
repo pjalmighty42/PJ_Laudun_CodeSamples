@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.upcoming-container{
+    background-color: $light-gray;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 350px;
+    height: 445px;
+    .upcoming-header-sect, .upcoming-events-sect{
+        width: 70%;
+        margin: auto;
+    }
+    .upcoming-header-sect{
+        margin-top: 2em;
+        margin-bottom: 1em;
+        @media screen and (max-width:767px){
+            h3{
+                color: $dark-blue;
+                .events-txt{
+                    font-weight: bold;
+                }
+            }
+            
+        }
+    }
+    .upcoming-events-sect{
+        margin-top: 1em;
+    }
+}

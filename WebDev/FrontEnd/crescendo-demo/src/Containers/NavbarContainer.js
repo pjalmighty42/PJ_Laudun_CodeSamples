@@ -21,7 +21,7 @@ import {
 
   const NavBarContainer = () => {
 
-    const [currScreenWidth, setScreenWidth] = useState(1024);
+    const [currScreenWidth, setScreenWidth] = useState(window.innerWidth);
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -52,7 +52,7 @@ import {
 
       return (
         <Fragment>
-            <Navbar className="navbar-main" color="light" light fixed="top" expand="md">
+            <Navbar className="navbar-main" color="light" light expand="md">
                 <div className="main-bar">
                     <NavbarBrand href="/">
                         <OutputBrandImage size={currScreenWidth} />

@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.social-media-btn{
+    background-color: $white;
+    border-radius: 100%;
+    padding: .25em .5em;
+    margin-right: 0.5em;
+    a{
+        color: $dark-gray;
+    }
+    
+}
+.social-media-btn:hover {
+    background-color: $light-gray;
+    transition: .5s;
+}
+.fb-icon{
+    padding: .25em .7em;
+}

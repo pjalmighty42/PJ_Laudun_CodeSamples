@@ -1,0 +1,61 @@
+@import '../variables.scss';
+
+.carousel {
+    position: relative;
+    height: 350px;
+    background-color: $dark-blue;
+    
+    .carousel-inner{
+        margin: 0 auto;
+        .carousel-item{
+            width: 80%;
+            margin-left: 3em;
+            margin-top: 1em;
+            .carousel-card-container{
+                max-height: 275px;
+                .card-bg {
+                    max-height: 273px;
+                    position: relative;
+                    z-index: 0;
+                    max-width: 80%;
+                }
+                img{
+                    max-width: 78%;
+                    position: relative;
+                    z-index: 1;
+                    top: -275px;
+                    margin-left: .2em;
+                    clip-path: polygon(28% 7%, 66% 7%, 93% 7%, 94% 71%, 71% 94%, 31% 94%, 6% 94%, 6% 30%);
+                }
+            }
+        }
+        .carousel-item.active{
+            width: 80%; 
+            margin-left: 3em;
+            margin-top: 1em;
+            .carousel-card-container{
+                max-height: 275px;
+                .card-bg {
+                    max-height: 273px;
+                    position: relative;
+                    z-index: 0;
+                    max-width: 80%;
+                }
+                img{
+                    max-width: 78%;
+                    position: relative;
+                    z-index: 1;
+                    top: -275px;
+                    margin-left: .2em;
+                    clip-path: polygon(28% 7%, 66% 7%, 93% 7%, 94% 71%, 71% 94%, 31% 94%, 6% 94%, 6% 30%);
+                }
+            }
+        }
+    }
+    
+    .carousel-indicators li{
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+    }
+}
