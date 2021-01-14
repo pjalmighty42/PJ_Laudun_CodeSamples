@@ -5,14 +5,26 @@ const initialState = {
     selStore: {},
     selStoreType: '',
     numOfSpecial: 0,
-    selSpecials: []
+    selSpecials: [],
+    error: ''
 };
 
 const storeReducer = (state = initialState, action) => {
     switch(action.type){
+        case STORE_TYPES.FETCH_STORE_LIST_REQUEST:
+            return {
+                ...state,
+            };
+        case STORE_TYPES.FETCH_STORE_LIST_FAILURE:
+            return{
+                storeObjList: [],
+                error: action.payload
+            };
         case STORE_TYPES.GET_STORE_LIST:
             return {
-                storeObjList: action.payload 
+                ...state,
+                storeObjList: [...state.storeObjList, action.payload],
+                error: ''
             };
         case STORE_TYPES.GET_STORE_BY_ID:
             return {

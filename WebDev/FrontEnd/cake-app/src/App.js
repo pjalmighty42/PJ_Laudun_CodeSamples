@@ -23,7 +23,7 @@ const App = () => {
   */
   return (
     <Provider store={store}>
-     
+      <DecisionPage />
     </Provider>
   );
 }

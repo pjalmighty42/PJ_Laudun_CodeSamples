@@ -1,3 +1,4 @@
+
 import { STORE_TYPES } from './storestypes';
 import storeList from '../../jsondata/stores.json';
 
@@ -5,77 +6,76 @@ const randomNum = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-const getStoresList = (stores) => {
-    return{
-        type: STORE_TYPES.GET_STORE_LIST,
-        payload: stores
+export const fetchStoresRequest = () => {
+    return {
+        type: STORE_TYPES.FETCH_STORE_LIST_REQUEST
     };
 };
 
-const getStoreById = (store) => {
+const fetchStoresFailure = (err) => {
+    return {
+        type: STORE_TYPES.FETCH_STORE_LIST_FAILURE,
+        payload: err
+    };
+};
+
+const getStoresList = (storeIn) => {
+    return{
+        type: STORE_TYPES.GET_STORE_LIST,
+        payload: storeIn
+    };
+};
+
+const getStoreById = (storeIn) => {
     return {
         type: STORE_TYPES.GET_STORE_BY_ID,
-        payload: store
+        payload: storeIn
     };
 };
 
 export const fetchGameStoresList = () => {
+
     return (dispatch) => {
-        console.log(storeList);
+        dispatch(fetchStoresRequest);
 
         if(storeList.length > 0) {
-            let storeListOut = storeList.map(store => {
-                store['location-dist-mod'] = randomNum(0, 150);
-                return store;
-            });
-            store["supply-amt"].forEach(item => {
-                item = randomNum(0, 15)
-            });
-            
-            return {
-               store
-            }
-        });
+            storeList.map(s => {
+                if(s.specializations.length === 2){
+                    s.specializations = "Ice Cream";
+                }
+                else{
+                    let spec = s.specializations[0].toUpperCase();
+                    s.specializations = spec + s.specializations.slice(1);
+                    console.log(s.specializations)
+                }
 
-            dispatch(getStoresList(storeListOut));
+                s.locationDistMod = randomNum(1, 10);
+
+                for(let sup = 0; sup < s.supplyAmt.length; sup++){
+                    s.supplyAmt[sup] = randomNum(5, 25);
+                }
+
+                return dispatch(getStoresList(s));
+            });
         }
-    };
+        else{
+            dispatch(fetchStoresFailure("The current list of stores are unavailable! Please try again later..."));
+        }
+    }
 };
 
-<<<<<<< Updated upstream
 export const fetchGameStoreById = (id) => {
     
-=======
-export const fetchGameStoreById = (state, id) => {
-    
     return (dispatch) => {
-        state.selSpecials = [];
 
-        let storeChoice = state.storeObjList.filter(s => s.id === id);
+        let storeChoice = storeList.filter(s => s.id === id);
 
-        let numOfSpecs = randomNum(0, 5);
-
-        let specialsList = [];
-
-        switch(storeChoice["specializations"]){
-            case "candy":
-                specialsList = storeChoice["specializations"]["candy"];
-                break;
-            case "shakes-ic":
-                specialsList = storeChoice["specializations"]["shakes-ic"];
-                break;
-            case "cakes":
-            default:
-                specialsList = storeChoice["specializations"]["cakes"];
-                break;
+        if(storeChoice.keys(storeChoice).length !== 0){
+    
+            dispatch(getStoreById(storeChoice));
         }
-        
-        for(let i = 0; i < numOfSpecs; i++){
-            let randIndx = randomNum(0, specialsList.length);
-            state.selSpecials.push(specialsList[randIndx]);
+        else{
+            dispatch(fetchStoresFailure("The current list of stores are unavailable! Please try again later..."));
         }
-
-        dispatch(getStoreById(storeChoice));
     }
->>>>>>> Stashed changes
 }
