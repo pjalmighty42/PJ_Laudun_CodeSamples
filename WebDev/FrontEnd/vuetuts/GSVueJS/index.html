@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue3 GS: Shopping List App</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div id="shopping-list" class="row">
+                <div id="header" class="col-12 justify-content-center">
+                    <h1>{{header ? header.toLocaleUpperCase() : 'Welcome'}}</h1>
+                    <div class="btn-group" role="group">
+                        <button 
+                        v-if="editing" 
+                        @click="doEdit(false)"
+                        type="button" class="btn btn-outline-danger">Cancel</button>
+                        <button 
+                        v-else 
+                        @click="doEdit(true)"
+                        type="button" class="btn btn-primary">Add Item</button>
+                    </div>
+                </div>
+                <div v-if="editing" class="col-12 d-flex justify-content-center">
+                    <input 
+                        type="text" 
+                        v-model="newItem" 
+                        @keyup.enter="saveItem"
+                        placeholder="Add New Item..."
+                    >
+                    <button 
+                        class="btn btn-primary" 
+                        @click="saveItem"
+                        :disabled="newItem.length === 0"
+                        >Save Item</button>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <ul v-if="editing" class="list-group list-group-flush">
+                        <li class="list-group-item" 
+                            v-for="item in reverseItems"
+                            :class="[
+                                item.purchased ? 'strikeout' : '' ,
+                                item.priority ? 'priority' : ''
+                            ]"
+                            @click="togglePurchased(item)"
+                            >{{item.label}}</li>
+                    </ul>
+                    <p v-else-if="items.length === 0 || !editing">Nice! You bought all your items!</p>
+                </div>
+            </div>
+            <div id="components" class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <click-counter></click-counter>
+                </div>
+            </div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

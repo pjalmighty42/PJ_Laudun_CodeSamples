@@ -1,0 +1,17 @@
+#header{
+    display: grid;
+}
+
+.strikeout{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.priority{
+    color: orangered;
+    font-weight: bold;
+}
+
+li:hover{
+    cursor: pointer;
+}
