@@ -7,7 +7,7 @@ export default function LayoutContainer(props) {
   return (
     <Layout>
       <Header className="header">
-        <div className="logo">Mad Mobile Coding Challenge</div>
+        <div className="logo">Mad PJ Challenge</div>
       </Header>
       <Content>{props.children}</Content>
       <Footer style={{ textAlign: "right" }}>

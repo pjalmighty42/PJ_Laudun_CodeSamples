@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, Col, Row, List, Space, Input } from "antd";
 import {
   SortAscendingOutlined,
   SortDescendingOutlined
 } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { setList } from "../app/features/listSlice";
-import uuid from "react-uuid";
+import { setIsError, setListModified } from "../App/Features/listSlice";
 
 import ListCard from "./ListCard/ListCard";
 
@@ -17,16 +16,12 @@ const selectedSortStyle = {
 const { Search } = Input;
 
 export default function ListMain() {
-  //Choose to keep all logic within ListMain.js
-  /*
-  This is because we're using Redux Toolkit there's no
-  need to have the complexity of pushing up state unecessarily.
-  */
   const dispatch = useDispatch(); //to store edits
-  const personListSlice = useSelector((state) => state.list.personList);
+
+  //Page Loading & Error handling
   const isLoading = useSelector((state) => state.list.isLoading);
-  //This is the local state variable for changes/edits & sorting/filtering
-  const [personList, setPersonList] = useState([]);
+  //Person List modification (the uuid for person)
+  const personList = useSelector((state) => state.list.personListModified);
 
   /*
   Created these 4 state vars to handle sorting and switching from Asc/Desc sort
@@ -43,94 +38,65 @@ export default function ListMain() {
     false
   );
 
-  /*
-    I realized that I need a way to handle changes, which meant that I needed
-    a better 1-for-1 for an item changed and it's corresponding array obj
-    so I am using a "persId" with a uuid value so that it will be a more
-    direct 1-for-1 for any card edits
-  */
-  useEffect(() => {
-    if (personListSlice) {
-      let personListModified = [...personListSlice];
-
-      for (let p = 0; p < personListModified.length; p++) {
-        let person = personListModified[p];
-        let newPersId = {
-          persId: uuid()
-        };
-        personListModified[p] = { ...person, ...newPersId };
-      }
-      setPersonList(personListModified);
-    }
-  }, []); //Only run effect once
-
+  /**
+   * data: {id: persId (uuid), email: email}
+   * @param {*} data 
+   */
   const editPerson = (data) => {
-    /*
-      data = {id: persId (see above), email: new email}
-      Because the persId and the data.id are a 1-for-1, the uuids 
-      that match would be solid and this would avoid incorrect editing 
-      of cards.
-      Choose to only do email for time reasons and because if we're trying
-      for phone and location editing, that would open a whole other can of 
-      worms on how to implement it properly
-    */
+
     let { id, email } = data;
     personList.forEach((p) => {
       if (p.persId === id) {
         p.email = email;
       }
     });
-    //Set the updated array for 2-way card binding on page
-    setPersonList(personList);
-    //Redux state edits to keep the Redux state in sync with local state
-    //We need to keep any updates in sync
-    dispatch(setList(personList));
+    dispatch(setListModified(personList));
   };
 
   const editFailed = (err) => {
-    console.log(err);
+    dispatch(setIsError(true));
   };
 
   //Will hold the results if there's a personList or not
   let cardListOut = "";
 
-  if (personList) {
-    //AntDesign Card List, the List.Item is the ListCard.js file
-    //w/ passed in unique id's and keys
-    //edit functions are for lifting up state of any card edits (see above)
-    cardListOut = (
-      <List
-        grid={{
-          gutter: 16,
-          column: 3,
-          xs: 1,
-          sm: 2,
-          md: 4,
-          lg: 4,
-          xl: 6,
-          xxl: 3
-        }}
-        dataSource={personList}
-        renderItem={(person) => (
-          <List.Item>
-            <ListCard
-              key={person.persId}
-              id={person.persId}
-              person={person}
-              loading={isLoading}
-              editPersonFn={editPerson}
-              editFailedFn={editFailed}
-            />
-          </List.Item>
-        )}
-      />
-    );
-  } else {
+  if (personList.length === 0) {
     //Null/empty check
     cardListOut = (
       <Card title="No Persons" description="We could not find any persons" />
     );
   }
+
+  //AntDesign Card List, the List.Item is the ListCard.js file
+  //w/ passed in unique id's and keys
+  //edit functions are for lifting up state of any card edits (see above)
+  cardListOut = (
+    <List
+      grid={{
+        gutter: 16,
+        column: 3,
+        xs: 1,
+        sm: 2,
+        md: 4,
+        lg: 4,
+        xl: 6,
+        xxl: 3
+      }}
+      dataSource={personList}
+      renderItem={(person) => (
+        <List.Item>
+          <ListCard
+            key={person.persId}
+            id={person.persId}
+            person={person}
+            loading={isLoading}
+            editPersonFn={editPerson}
+            editFailedFn={editFailed}
+          />
+        </List.Item>
+      )}
+    />
+  );
 
   //Quick way to reset all the sorting variables for sorting features
   const resetAllSortSetters = () => {

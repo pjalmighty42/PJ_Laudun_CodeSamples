@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, Image, Form, Input, Button } from "antd";
-import { EditOutlined, PropertySafetyFilled } from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
 import PropTypes from "prop-types";
 
 export default function ListMain(props) {
@@ -63,16 +63,16 @@ export default function ListMain(props) {
         </Form>
       </div>
     );
-  } else {
-    nameSpan = <span className="listName">{fullName}</span>;
-    listInfoDiv = (
-      <div className="listInfo">
-        <p>{props.person.email}</p>
-        <p>{props.person.phone}</p>
-        <p>{cityState}</p>
-      </div>
-    );
-  }
+  } 
+
+  nameSpan = <span className="listName">{fullName}</span>;
+  listInfoDiv = (
+    <div className="listInfo">
+      <p>{props.person.email}</p>
+      <p>{props.person.phone}</p>
+      <p>{cityState}</p>
+    </div>
+  );
 
   return (
     <Card

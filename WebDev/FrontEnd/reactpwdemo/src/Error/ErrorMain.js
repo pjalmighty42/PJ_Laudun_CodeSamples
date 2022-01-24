@@ -8,7 +8,7 @@ export default function ErrorMain() {
         <Col id="listOutput" span={24}>
           <Card style={{ width: 600 }}>
             <ExclamationCircleOutlined />
-            <h1 type="danger">Error! No Data Found!</h1>
+            <h1 type="danger">Error!</h1>
             <ExclamationCircleOutlined />
           </Card>
         </Col>
