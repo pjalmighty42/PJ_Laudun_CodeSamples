@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  personList: [],
+  personListBase: [],
   personListModified: [],
   isLoading: false,
   isError: false
@@ -19,7 +19,7 @@ export const listSlice = createSlice({
     setIsError: (state, action) => {
       state.isError = action.payload;
     },
-    setList: (state, action) => {
+    setBaseList: (state, action) => {
       //Set redux personList here
       state.personList = action.payload;
     },
@@ -29,6 +29,6 @@ export const listSlice = createSlice({
   }
 });
 
-export const { setIsLoading, setIsError, setList, setListModified } = listSlice.actions;
+export const { setIsLoading, setIsError, setBaseList, setListModified } = listSlice.actions;
 
 export default listSlice.reducer;

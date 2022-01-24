@@ -64,16 +64,17 @@ export default function ListMain(props) {
       </div>
     );
   } 
-
-  nameSpan = <span className="listName">{fullName}</span>;
-  listInfoDiv = (
-    <div className="listInfo">
-      <p>{props.person.email}</p>
-      <p>{props.person.phone}</p>
-      <p>{cityState}</p>
-    </div>
-  );
-
+  else{
+    nameSpan = <span className="listName">{fullName}</span>;
+    listInfoDiv = (
+      <div className="listInfo">
+        <p>{props.person.email}</p>
+        <p>{props.person.phone}</p>
+        <p>{cityState}</p>
+      </div>
+    );
+  }
+  
   return (
     <Card
       className="listCard"

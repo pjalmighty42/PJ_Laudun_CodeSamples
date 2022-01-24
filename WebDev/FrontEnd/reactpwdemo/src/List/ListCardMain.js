@@ -21,7 +21,8 @@ export default function ListMain() {
   //Page Loading & Error handling
   const isLoading = useSelector((state) => state.list.isLoading);
   //Person List modification (the uuid for person)
-  const personList = useSelector((state) => state.list.personListModified);
+  const personListBase = useSelector((state) => state.list.personListBase);
+  const personListModified = useSelector((state) => state.list.personListModified);
 
   /*
   Created these 4 state vars to handle sorting and switching from Asc/Desc sort
@@ -43,14 +44,21 @@ export default function ListMain() {
    * @param {*} data 
    */
   const editPerson = (data) => {
+    //This is a multi-step process because JS
+    //First create a copy of the modified list (to allow us to edit a read-only array)
+    let editList = [...personListModified];
 
+    //Dereference the data coming in, find the person in the above array, create a new object, and edit that
     let { id, email } = data;
-    personList.forEach((p) => {
-      if (p.persId === id) {
-        p.email = email;
-      }
-    });
-    dispatch(setListModified(personList));
+    let selectedPerson = editList.find(({persId}) => persId === id);
+    selectedPerson = {...selectedPerson, email: email};
+    
+    //Finally find the index of the above object and assign the value of the above object to the object in the array
+    let editIndex = editList.findIndex(p => p.persId == id);
+    editList[editIndex] = selectedPerson;
+
+    //Store it in the state
+    dispatch(setListModified(editList));
   };
 
   const editFailed = (err) => {
@@ -60,7 +68,7 @@ export default function ListMain() {
   //Will hold the results if there's a personList or not
   let cardListOut = "";
 
-  if (personList.length === 0) {
+  if (personListModified.length === 0) {
     //Null/empty check
     cardListOut = (
       <Card title="No Persons" description="We could not find any persons" />
@@ -69,7 +77,7 @@ export default function ListMain() {
 
   //AntDesign Card List, the List.Item is the ListCard.js file
   //w/ passed in unique id's and keys
-  //edit functions are for lifting up state of any card edits (see above)
+  //edit functions are for lifting up state of any card edits
   cardListOut = (
     <List
       grid={{
@@ -82,7 +90,7 @@ export default function ListMain() {
         xl: 6,
         xxl: 3
       }}
-      dataSource={personList}
+      dataSource={personListModified}
       renderItem={(person) => (
         <List.Item>
           <ListCard
@@ -112,65 +120,59 @@ export default function ListMain() {
     resetAllSortSetters(); //Reset all sorting flags
     if (firstName) {
       //If firstName = true, sort Asc on the first name
-      let currentPersonList = [...personList];
+      let currentPersonList = [...personListModified];
       //localeComparison on an all-lower case first name for accuracy
       let sortedNameList = currentPersonList.sort((a, b) =>
         a.name.first.toLowerCase().localeCompare(b.name.first.toLowerCase())
       );
       setSortFirstNameAscSelected(true); //Set First name Asc flag = true
-      setPersonList(sortedNameList); //Store sorted list in state
-    } else {
+      dispatch(setListModified(sortedNameList));
+    } 
+
       //If firstName = false, sort Asc on the last name
       //See above for explination
-      let currentPersonList = [...personList];
+      let currentPersonList = [...personListModified];
       let sortedNameList = currentPersonList.sort((a, b) =>
         a.name.last.toLowerCase().localeCompare(b.name.last.toLowerCase())
       );
       setSortLastNameAscSelected(true);
-      setPersonList(sortedNameList);
-    }
+      dispatch(setListModified(sortedNameList));
   };
 
   const sortDescending = (firstName = true) => {
     resetAllSortSetters();
     if (firstName) {
-      let currentPersonList = [...personList];
+      let currentPersonList = [...personListModified];
       let sortedNameList = currentPersonList.sort((a, b) =>
         b.name.first.toLowerCase().localeCompare(a.name.first.toLowerCase())
       );
       setSortFirstNameDescSelected(true);
-      setPersonList(sortedNameList);
-    } else {
-      let currentPersonList = [...personList];
-      let sortedNameList = currentPersonList.sort((a, b) =>
-        b.name.last.toLowerCase().localeCompare(a.name.last.toLowerCase())
-      );
-      setSortLastNameDescSelected(true);
-      setPersonList(sortedNameList);
+      dispatch(setListModified(sortedNameList));
     }
+
+    let currentPersonList = [...personListModified];
+    let sortedNameList = currentPersonList.sort((a, b) =>
+      b.name.last.toLowerCase().localeCompare(a.name.last.toLowerCase())
+    );
+    setSortLastNameDescSelected(true);
+    dispatch(setListModified(sortedNameList));
   };
 
   //Filtering the list via user input (the search bar on the screen)
   const filterByInput = (value) => {
-    //Since we're not sorting, clear the flags
     resetAllSortSetters();
-    //I've decided to filter on both the first or last names
-    //Value check, if nothing typed in, push back the slice personList
-    //(This will also work for resetting to original state)
+    //If there's a value, filter, else reset the list with the base list
     if (value) {
-      //Create new var with a copu of the personList
-      let currentPersonList = [...personList];
-      //Quick filter first or last name of an object if it matches
-      //Typed in text (since we're doing a simple iteration, we avoid
-      //repeating variables)
+      let currentPersonList = [...personListModified];
       let filteredPersonList = currentPersonList.filter(
         (p) =>
           p.name.first.toLowerCase().includes(value) ||
           p.name.last.toLowerCase().includes(value)
       );
-      setPersonList(filteredPersonList);
-    } else {
-      setPersonList(personListSlice);
+      dispatch(setListModified(filteredPersonList));
+    } 
+    else{
+      dispatch(setListModified(personListBase));
     }
   };
 

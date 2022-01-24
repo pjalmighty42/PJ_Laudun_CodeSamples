@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { setList, setListModified, setIsLoading, setIsError } from "./App/Features/listSlice";
+import { setBaseList, setListModified, setIsLoading, setIsError } from "./App/Features/listSlice";
 import uuid from "react-uuid";
 
 import LayoutContainer from "./Layout/LayoutHOC";
@@ -17,9 +17,6 @@ export default function App() {
   //Error handling
   const isError = useSelector((state) => state.list.isError);
 
-  //Base person list (to use to modify)
-  const personList = useSelector((state) => state.list.personList);
-
   useEffect(() => {
     //Set loading to true before API call
     dispatch(setIsLoading(true));
@@ -27,14 +24,9 @@ export default function App() {
     axios
       .get("https://randomuser.me/api/?results=25")
       .then((res) => {
-        //If good, store list in Redux store, set loading to false
-        dispatch(setList(res.data.results));
-        dispatch(setIsLoading(false));
-        dispatch(setIsError(false));
-
-        //Then create the modified list with uuid
-        if(personList){
-          let personListModifiedLoad = [...personList];
+        //If good, create base and mod lists
+        if(res.data.results){
+          let personListModifiedLoad = [...res.data.results];
 
           for (let p = 0; p < personListModifiedLoad.length; p++) {
             let person = personListModifiedLoad[p];
@@ -43,14 +35,19 @@ export default function App() {
             };
             personListModifiedLoad[p] = { ...person, ...newPersId };
           }
-          dispatch(setListModified(personListModifiedLoad));
+          dispatch(setBaseList(personListModifiedLoad)); //Base, pristine, list (will use this to reset if need be)
+          dispatch(setListModified(personListModifiedLoad)); //List that can be changed
         }
+
+        dispatch(setIsLoading(false));
+        dispatch(setIsError(false));
       })
       .catch((err) => {
         //If error, set state variable to true
         //Set Redux store list to empty, set loading to false
         dispatch(setIsError(true));
-        dispatch(setList([]));
+        dispatch(setBaseList([]));
+        dispatch(setListModified([]));
         dispatch(setIsLoading(false));
       });
   }, []);
