@@ -1,22 +1,27 @@
 import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
+import {getLinkObjectList} from '../../../GlobalHelper/LinkHelper';
+
 const { Header } = Layout;
 
-export default function MainNavigation (props) {
+export default function MainNavigation () {
+    const linkList = getLinkObjectList();
+
+    const LinkOutput = () => {
+        return linkList.map(link => {
+            return <Menu.Item key={link.id}>
+                <Link to={'/' + link.toLoc}>
+                    {link.title}
+                </Link>
+            </Menu.Item>
+        });
+    }
+
     return(
         <Header>
-            <div>PJ's Gaming Emporium!</div>
             <Menu theme="light" mode="horizontal">
-                {
-                    props.links.map(link => {
-                        return <Link to={'/' + link.toLoc}>
-                            <Menu.Item key={link.id}>
-                                {link.title}
-                            </Menu.Item>
-                        </Link>
-                    })
-                }
+                <LinkOutput />
             </Menu>
         </Header>
     );

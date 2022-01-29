@@ -1,13 +1,17 @@
 import { Row } from 'antd';
 import LinkCellCard from './Components/LinkCellCard';
 
-export default function LinkGridContainer(props){
+import {getLinkObjectList} from '../../GlobalHelper/LinkHelper';
+
+export default function LinkGridContainer(){
+
+    const linkList = getLinkObjectList();
 
     return(
         <div>
              <Row gutter={16}>
                  {
-                    props.linkListArray.map(link => {
+                    linkList.map(link => {
                         return <LinkCellCard 
                         
                         />
