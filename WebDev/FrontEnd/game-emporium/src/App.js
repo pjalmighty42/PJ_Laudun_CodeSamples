@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import {Routes, Route} from 'react-router-dom';
+import { Layout } from 'antd';
+
+import MainPageContainer from './Pages/MainPage/MainPageContainer';
+import MainNavigation from './Pages/MainPage/Components/Navigation';
+import FooterMain from './Pages/MainPage/Components/Footer';
+
+import LinkGridContainer from '../src/Pages/LinkGridPage/LinkGridContainer';
+
 import './App.css';
 
+const {Content} = Layout;
+
 function App() {
+
+  const linkListItemsArray = [
+    {
+      id: 'game01',
+      title: 'Home',
+      toLoc: 'home',
+    },
+    {
+      id: 'game02',
+      title: 'Breakout',
+      toLoc: 'breakout',
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainPageContainer>
+      <MainNavigation links={linkListItemsArray}/>
+      <Content>
+          <Routes>
+              <Route path='/' element={<LinkGridContainer linkListArray={linkListItemsArray}/>} />
+              <Route path='/breakout' element={<LinkGridContainer linkListArray={linkListItemsArray}/>} />
+          </Routes>
+      </Content>
+      <FooterMain />
+    </MainPageContainer>
   );
 }
 
