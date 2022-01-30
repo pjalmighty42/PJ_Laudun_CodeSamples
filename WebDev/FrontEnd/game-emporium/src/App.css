@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .site-layout-content {
   min-height: 280px;
@@ -19,4 +19,10 @@
 
 #titleheader {
   padding: 0 25px;
+}
+
+#breakoutCanvas {
+  background: #eee;
+  height: 480px;
+  width: 320px;
 }
