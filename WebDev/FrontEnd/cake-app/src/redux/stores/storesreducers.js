@@ -15,6 +15,11 @@ const storeReducer = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case "STORE_DYNAMIC":
+            return{
+                dsID: action.payload.dsID,
+                ds: action.payload.ds
+            }
         case STORE_TYPES.FETCH_STORE_LIST_FAILURE:
             return{
                 storeObjList: [],

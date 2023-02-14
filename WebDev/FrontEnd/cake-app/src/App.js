@@ -21,6 +21,9 @@ const App = () => {
         </div>
       </Router>
   */
+      if (process.env.REACT_APP_STAGE === 'PROD')
+      console.log = function no_console() {};
+      
   return (
     <Provider store={store}>
       <DecisionPage />
