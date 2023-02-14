@@ -1,0 +1,100 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#listContainer {
+  min-height: 425px;
+  height: 950px;
+  max-height: 950px;
+  background-color: rgb(116, 116, 116);
+}
+
+#listOutput {
+  background-color: #ccc;
+  height: 950px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+#sideFilterContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+#sideFilterCard {
+  background-color: #e0dfdf;
+  width: 80%;
+  height: 80%;
+  margin-top: 10%;
+}
+
+#sideFilterCard label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(20, 20, 20);
+}
+.ant-card-body {
+  padding: 0;
+}
+
+#listSortFirstName,
+#listSortLastName {
+  color: rgb(20, 20, 20);
+}
+
+.sortListLink:hover {
+  color: rgb(36, 67, 153);
+}
+
+.listCard {
+  background-color: #fff !important;
+  color: rgba(97, 97, 97, 0.8);
+  width: 300px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.listCard .listHeader {
+  background-color: #47f;
+  color: #ccc;
+  padding: 15% 5%;
+  font-size: 1.5em;
+  border-radius: 15px 15px 0 0;
+}
+
+img.ant-image-img {
+  border-radius: 100%;
+  width: 150px;
+  height: auto;
+  position: relative;
+  top: -20px;
+  border: 5px solid #fff;
+  outline: 1px solid rgb(240, 240, 240);
+}
+.ant-image-mask {
+  position: relative;
+  top: -20px;
+}
+.ant-input-affix-wrapper {
+  background-color: #fff;
+}
+.ant-input {
+  color: rgb(20, 20, 20);
+}
+
+.ant-input-search-button {
+  background-color: rgb(20, 20, 20);
+  color: 1px solid rgb(240, 240, 240);
+}
+
+.ant-form-item-label label {
+  color: rgb(20, 20, 20);
+}
