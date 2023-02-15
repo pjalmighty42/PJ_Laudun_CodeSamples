@@ -25,7 +25,7 @@ const ClientSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["active", "hold", "rejected"],
+    enum: ["Active", "On Hold", "Rejected"],
   },
   submittedResume: {
     type: Boolean,
