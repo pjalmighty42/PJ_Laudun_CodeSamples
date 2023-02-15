@@ -1,0 +1,58 @@
+{
+  "applications": [
+    {
+      "id": "app0",
+      "companyName": "Test Company",
+      "dateApplied": "2-14-2023",
+      "role": {
+        "id": "app0",
+        "name": "Test Role",
+        "url": "http://www.example.com"
+      },
+      "status": "active",
+      "submittedResume": false,
+      "resumeViewed": false,
+      "contacted1stCall": false,
+      "techInterview": false,
+      "interview3": false,
+      "interview4": false,
+      "jobOffered": false
+    },
+    {
+      "id": "app1",
+      "companyName": "Test Company",
+      "dateApplied": "2-14-2023",
+      "role": {
+        "id": "app1",
+        "name": "Test Role",
+        "url": "http://www.example.com"
+      },
+      "status": "hold",
+      "submittedResume": false,
+      "resumeViewed": false,
+      "contacted1stCall": false,
+      "techInterview": false,
+      "interview3": false,
+      "interview4": false,
+      "jobOffered": false
+    },
+    {
+      "id": "app2",
+      "companyName": "Test Company",
+      "dateApplied": "2-14-2023",
+      "role": {
+        "id": "app2",
+        "name": "Test Role",
+        "url": "http://www.example.com"
+      },
+      "status": "rejected",
+      "submittedResume": false,
+      "resumeViewed": false,
+      "contacted1stCall": false,
+      "techInterview": false,
+      "interview3": false,
+      "interview4": false,
+      "jobOffered": false
+    }
+  ]
+}
