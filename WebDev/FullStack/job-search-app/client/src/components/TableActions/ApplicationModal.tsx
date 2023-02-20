@@ -1,4 +1,4 @@
-import ApplicationInterface from "../interfaces/ApplicationInterfaces";
+import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
 
 interface ApplicationModalProps {
   isOpen: boolean;
