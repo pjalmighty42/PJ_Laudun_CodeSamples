@@ -21,5 +21,28 @@ const DELETE_APP = gql`
     }
   }
 `;
+/*
+const UPDATE_APP = gql`
+  mutation updateApplication($app: ){
+    updateApplication(app: $app) {
+       id
+      companyName
+      dateApplied
+      status
+      role {
+        id
+        name
+        url
+      }
+      submittedResume
+      contacted1stCall
+      techInterview
+      interview3
+      interview4
+      jobOffered
+    }
+  }
+`;
+*/
 
 export { DELETE_APP };

@@ -7,6 +7,7 @@ import {
   Checkbox,
   ButtonGroup,
   Button,
+  TextField,
 } from "@mui/material";
 import { EditTwoTone, DeleteTwoTone } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
@@ -56,49 +57,90 @@ function ApplicationTableRow({ data }: ApplicationRowInterface) {
 
   return (
     <>
-      {data.map((row: ApplicationInterface) => (
-        <TableRow key={row.id}>
-          <TableCell>{row.companyName}</TableCell>
-          <TableCell>{row.dateApplied}</TableCell>
-          <TableCell>
-            <Link href={row.role.url} target="_blank" rel="noopener">
-              {row.role.name}
-            </Link>
-          </TableCell>
-          <TableCell>{row.status}</TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.submittedResume} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.resumeViewed} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.contacted1stCall} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.techInterview} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.interview3} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.interview4} />
-          </TableCell>
-          <TableCell>
-            <Checkbox disabled checked={row.jobOffered} />
-          </TableCell>
-          <TableCell>
-            <ButtonGroup variant="text">
-              <EditButton onClick={() => isEditHandler(row.id)}>
-                <EditTwoTone />
-              </EditButton>
-              <DeleteButton onClick={() => deleteDialogHandler(row.id)}>
-                <DeleteTwoTone />
-              </DeleteButton>
-            </ButtonGroup>
-          </TableCell>
-        </TableRow>
-      ))}
+      {data.map((row: ApplicationInterface) =>
+        row.id === appID ? (
+          <TableRow key={row.id}>
+            <TableCell>
+              <TextField value={row.companyName} variant="filled" />
+            </TableCell>
+            <TableCell>{row.dateApplied}</TableCell>
+            <TableCell>
+              <Link href={row.role.url} target="_blank" rel="noopener">
+                {row.role.name}
+              </Link>
+            </TableCell>
+            <TableCell>{row.status}</TableCell>
+            <TableCell>
+              <Checkbox checked={row.submittedResume} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.resumeViewed} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.contacted1stCall} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.techInterview} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.interview3} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.interview4} />
+            </TableCell>
+            <TableCell>
+              <Checkbox checked={row.jobOffered} />
+            </TableCell>
+            <TableCell>
+              <Button color="success" variant="contained">
+                Submit
+              </Button>
+            </TableCell>
+          </TableRow>
+        ) : (
+          <TableRow key={row.id}>
+            <TableCell>{row.companyName}</TableCell>
+            <TableCell>{row.dateApplied}</TableCell>
+            <TableCell>
+              <Link href={row.role.url} target="_blank" rel="noopener">
+                {row.role.name}
+              </Link>
+            </TableCell>
+            <TableCell>{row.status}</TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.submittedResume} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.resumeViewed} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.contacted1stCall} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.techInterview} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.interview3} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.interview4} />
+            </TableCell>
+            <TableCell>
+              <Checkbox disabled checked={row.jobOffered} />
+            </TableCell>
+            <TableCell>
+              <ButtonGroup variant="text">
+                <EditButton onClick={() => isEditHandler(row.id)}>
+                  <EditTwoTone />
+                </EditButton>
+                <DeleteButton onClick={() => deleteDialogHandler(row.id)}>
+                  <DeleteTwoTone />
+                </DeleteButton>
+              </ButtonGroup>
+            </TableCell>
+          </TableRow>
+        )
+      )}
       <DeleteDialog
         isOpen={openDeleteDialog}
         setIsOpen={deleteDialogHandler}

@@ -1,3 +1,4 @@
+import {} from "@mui/material";
 import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
 
 interface ApplicationModalProps {
