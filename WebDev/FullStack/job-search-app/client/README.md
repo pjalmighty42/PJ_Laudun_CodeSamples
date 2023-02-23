@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# The Job Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a demo, proof of concept I had decided to work on for various reasons:
 
-## Available Scripts
+- I wanted to drill in my experience working with GraphQL from my previous role (Carters)
+- I wanted to work on a demo to show using the MERN stack ( <3 the MERN stack)
+- I needed a better way to keep track of Job Applications (to automate having to use Excel)
 
-In the project directory, you can run:
+## The Stack
 
-### `npm start`
+The stack for this application is as follows:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- MERN stack
+  - MongoDB, ExpressJS, React, Nodejs
+  - The React portion is more React/Typescript
+  - The backend is MongoDB with Mongoose handling the middleware
+  - And I am using Apollo to handle dealing with GraphQL (as well as state management through it's caching)
+  - The UI framework for this project is MaterialUI
+  - The reversioning is obviously Git
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## The App
 
-### `npm test`
+The application is a simple Single Page Application (SPA) with all the functionality happening on the main page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is intentional as I had a simple need to manage my application submissions in an automative manner. As such I only needed a single page, with a table, and a way to Create Read Update and Delete (CRUD) items in the table.
 
-### `npm run build`
+## In the future
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I am going to remove the Mongo portion and just use something like json-server as the "backend." Just so it could be more demo-able and so that turn it into a bit of a SaaS (Software as a Service) sort of thing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If I go that route, I will use this to learn how to create Node Packages for a release.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Till then, thanks for reading this!

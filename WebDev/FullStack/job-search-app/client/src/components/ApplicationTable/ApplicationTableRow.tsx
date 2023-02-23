@@ -14,6 +14,7 @@ import { styled } from "@mui/material/styles";
 import { orange, amber, deepOrange, red } from "@mui/material/colors";
 import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
 
+import ApplicationModal from "../TableActions/ApplicationModal";
 import DeleteDialog from "../TableActions/DeleteDialog";
 
 const EditButton = styled(Button)({
@@ -55,96 +56,102 @@ function ApplicationTableRow({ data }: ApplicationRowInterface) {
     setIsEdit(!currIsEdit);
   };
 
+  const toggleEditModal = () => {
+    const currIsEdit = isEdit;
+    setIsEdit(!currIsEdit);
+  };
+
   return (
     <>
-      {data.map((row: ApplicationInterface) =>
-        row.id === appID ? (
-          <TableRow key={row.id}>
-            <TableCell>
-              <TextField value={row.companyName} variant="filled" />
-            </TableCell>
-            <TableCell>{row.dateApplied}</TableCell>
-            <TableCell>
-              <Link href={row.role.url} target="_blank" rel="noopener">
-                {row.role.name}
-              </Link>
-            </TableCell>
-            <TableCell>{row.status}</TableCell>
-            <TableCell>
-              <Checkbox checked={row.submittedResume} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.resumeViewed} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.contacted1stCall} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.techInterview} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.interview3} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.interview4} />
-            </TableCell>
-            <TableCell>
-              <Checkbox checked={row.jobOffered} />
-            </TableCell>
-            <TableCell>
-              <Button color="success" variant="contained">
-                Submit
-              </Button>
-            </TableCell>
-          </TableRow>
-        ) : (
-          <TableRow key={row.id}>
-            <TableCell>{row.companyName}</TableCell>
-            <TableCell>{row.dateApplied}</TableCell>
-            <TableCell>
-              <Link href={row.role.url} target="_blank" rel="noopener">
-                {row.role.name}
-              </Link>
-            </TableCell>
-            <TableCell>{row.status}</TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.submittedResume} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.resumeViewed} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.contacted1stCall} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.techInterview} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.interview3} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.interview4} />
-            </TableCell>
-            <TableCell>
-              <Checkbox disabled checked={row.jobOffered} />
-            </TableCell>
-            <TableCell>
-              <ButtonGroup variant="text">
-                <EditButton onClick={() => isEditHandler(row.id)}>
-                  <EditTwoTone />
-                </EditButton>
-                <DeleteButton onClick={() => deleteDialogHandler(row.id)}>
-                  <DeleteTwoTone />
-                </DeleteButton>
-              </ButtonGroup>
-            </TableCell>
-          </TableRow>
-        )
-      )}
+      {data.map((row: ApplicationInterface) => (
+        <TableRow key={row.id}>
+          <TableCell>{row.companyName}</TableCell>
+          <TableCell>{row.dateApplied}</TableCell>
+          <TableCell>
+            <Link href={row.role.url} target="_blank" rel="noopener">
+              {row.role.name}
+            </Link>
+          </TableCell>
+          <TableCell>{row.status}</TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Submitted Resume?" }}
+              checked={row.submittedResume}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Was Resume Reviewed?" }}
+              checked={row.resumeViewed}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{
+                "aria-label": "Did you receive an Initial Phone Call?",
+              }}
+              checked={row.contacted1stCall}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Did you do a Tech Interview?" }}
+              checked={row.techInterview}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Did you have a 3rd Interview?" }}
+              checked={row.interview3}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Did you have a 4th Interview?" }}
+              checked={row.interview4}
+            />
+          </TableCell>
+          <TableCell>
+            <Checkbox
+              disabled
+              inputProps={{ "aria-label": "Did you receive a Job Offer?" }}
+              checked={row.jobOffered}
+            />
+          </TableCell>
+          <TableCell>
+            <ButtonGroup variant="text">
+              <EditButton
+                onClick={() => isEditHandler(row.id)}
+                aria-label="Edit Button"
+              >
+                <EditTwoTone />
+              </EditButton>
+              <DeleteButton
+                onClick={() => deleteDialogHandler(row.id)}
+                aria-label="Delete Button"
+              >
+                <DeleteTwoTone />
+              </DeleteButton>
+            </ButtonGroup>
+          </TableCell>
+        </TableRow>
+      ))}
       <DeleteDialog
         isOpen={openDeleteDialog}
         setIsOpen={deleteDialogHandler}
         id={appID}
+      />
+      <ApplicationModal
+        isOpen={isEdit}
+        isEdit={true}
+        selId={appID}
+        setIsOpen={toggleEditModal}
       />
     </>
   );

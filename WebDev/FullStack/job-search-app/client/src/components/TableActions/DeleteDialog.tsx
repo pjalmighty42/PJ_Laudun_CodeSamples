@@ -54,9 +54,14 @@ function DeleteDialog({ isOpen, setIsOpen, id }: DeleteDialogInterface) {
 
   return (
     <>
-      <Dialog open={isOpen} onClose={setIsOpen}>
-        <DialogHeader>Deletion Warning!</DialogHeader>
-        <DialogBody>
+      <Dialog
+        open={isOpen}
+        onClose={setIsOpen}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <DialogHeader id="modal-title">Deletion Warning!</DialogHeader>
+        <DialogBody id="modal-description">
           <DialogContentText marginTop={3}>
             Are you sure you want to delete this Application?
           </DialogContentText>

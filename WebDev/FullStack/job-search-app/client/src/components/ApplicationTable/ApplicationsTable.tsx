@@ -30,9 +30,9 @@ function ApplicationTable() {
   return (
     <>
       {!loading && !error && (
-        <Paper style={{ height: 400, width: "100%" }}>
+        <Paper style={{ height: "100%", width: "100%" }}>
           <TableContainer>
-            <Table aria-label="customized table">
+            <Table aria-label="Current Job Applications Table">
               <TableHead>
                 <TableRow>
                   <TableCell width="15%">Company Name</TableCell>
