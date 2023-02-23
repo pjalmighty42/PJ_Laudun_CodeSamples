@@ -9,7 +9,7 @@ import {
 import { useMutation } from "@apollo/client";
 import { DELETE_APP } from "../../mutations/clientMutations";
 import { GET_APPLICATIONS } from "../../queries/clientQueries";
-import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
+import { ApplicationInterface } from "../../interfaces/ApplicationInterfaces";
 
 import { styled } from "@mui/material/styles";
 import { red } from "@mui/material/colors";

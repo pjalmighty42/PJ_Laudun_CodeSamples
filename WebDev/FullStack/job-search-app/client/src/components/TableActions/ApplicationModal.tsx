@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useState, ChangeEvent } from "react";
 import { useMutation } from "@apollo/client";
 
 import {
@@ -17,10 +17,13 @@ import {
   Checkbox,
   Box,
 } from "@mui/material";
-import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
+import {
+  ApplicationInterface,
+  ApplicationBaseInterface,
+  RoleInterface,
+} from "../../interfaces/ApplicationInterfaces";
 import { styled } from "@mui/material/styles";
 import { yellow, green, grey } from "@mui/material/colors";
-import { Label } from "@mui/icons-material";
 
 const ColumnBox = styled(Box)({
   display: "flex",
@@ -65,15 +68,10 @@ const FormFieldGenerator = ({ children, width = "" }: FieldGeneratorProps) => {
 };
 
 function ApplicaionModal({ isOpen, isEdit, setIsOpen }: ApplicationModalProps) {
-  const [application, setApplication] = useState<ApplicationInterface>({
+  const [application, setApplication] = useState<ApplicationBaseInterface>({
     id: "",
     companyName: "",
     dateApplied: "",
-    role: {
-      id: "",
-      name: "",
-      url: "",
-    },
     status: "",
     submittedResume: false,
     resumeViewed: false,
@@ -83,6 +81,43 @@ function ApplicaionModal({ isOpen, isEdit, setIsOpen }: ApplicationModalProps) {
     interview4: false,
     jobOffered: false,
   });
+
+  const [role, setRole] = useState<RoleInterface>({
+    id: "",
+    name: "",
+    url: "",
+  });
+
+  //Choose to flatten object, to avoid headaches, wrong behaviors, and cloning issues
+  const setFormApplication = (
+    event:
+      | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      | SelectChangeEvent<string>
+  ) => {
+    const updatedField = { [event.target.name]: event.target.value };
+    setApplication((prevState) => ({
+      ...prevState,
+      ...updatedField,
+    }));
+  };
+
+  const setFormRole = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const updatedField = { [event.target.name]: event.target.value };
+    setRole((prevState) => ({
+      ...prevState,
+      ...updatedField,
+    }));
+  };
+
+  const saveApplication = () => {
+    const finishedApplication: ApplicationInterface = {
+      ...application,
+      role: { ...role },
+    };
+    setApplication(finishedApplication);
+  };
 
   return (
     <>
@@ -105,16 +140,32 @@ function ApplicaionModal({ isOpen, isEdit, setIsOpen }: ApplicationModalProps) {
           <Stack direction="row" spacing={2} id="application-basic-info">
             <FormFieldGenerator width="33%">
               <label>Company Name</label>
-              <TextField type="text" variant="outlined" size="small" />
+              <TextField
+                type="text"
+                variant="outlined"
+                size="small"
+                name="companyName"
+                onChange={setFormApplication}
+              />
             </FormFieldGenerator>
             <FormFieldGenerator width="33%">
               <label>Date Applied</label>
-              <TextField type="date" variant="outlined" size="small" />
+              <TextField
+                type="date"
+                variant="outlined"
+                size="small"
+                name="dateApplied"
+                onChange={setFormApplication}
+              />
             </FormFieldGenerator>
             <FormFieldGenerator width="33%">
               <label>Status</label>
               <FormControl size="small">
-                <Select value={"none"}>
+                <Select
+                  value="none"
+                  name="status"
+                  onChange={setFormApplication}
+                >
                   <MenuItem value="none">Please Select a Status</MenuItem>
                   <MenuItem value="active">Active</MenuItem>
                   <MenuItem value="hold">On Hold</MenuItem>
@@ -127,61 +178,91 @@ function ApplicaionModal({ isOpen, isEdit, setIsOpen }: ApplicationModalProps) {
           <Stack direction="row" spacing={2} id="application-role-info">
             <FormFieldGenerator width="50%">
               <label>Role Name</label>
-              <TextField type="text" variant="outlined" size="small" />
+              <TextField
+                type="text"
+                variant="outlined"
+                size="small"
+                name="name"
+                onChange={setFormRole}
+              />
             </FormFieldGenerator>
             <FormFieldGenerator width="50%">
               <label>Job Description URL</label>
-              <TextField type="text" variant="outlined" size="small" />
+              <TextField
+                type="text"
+                variant="outlined"
+                size="small"
+                name="url"
+                onChange={setFormRole}
+              />
             </FormFieldGenerator>
           </Stack>
           <DialogSubHeader>Current Status Checks</DialogSubHeader>
           <Stack direction="row" spacing={2} id="application-role-info">
             <FormFieldGenerator width="14%">
               <label>Submitted Resume?</label>
-              <Checkbox inputProps={{ "aria-label": "Submitted Resume?" }} />
+              <Checkbox
+                name="submittedResume"
+                inputProps={{ "aria-label": "Submitted Resume?" }}
+                onChange={setFormApplication}
+              />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>Resume Reviewed?</label>
-              <Checkbox inputProps={{ "aria-label": "Was Resume Reviewed?" }} />
+              <Checkbox
+                name="resumeViewed"
+                inputProps={{ "aria-label": "Was Resume Reviewed?" }}
+                onChange={setFormApplication}
+              />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>Initial Call?</label>
               <Checkbox
+                name="contacted1stCall"
                 inputProps={{
                   "aria-label": "Did you receive an Initial Phone Call?",
                 }}
+                onChange={setFormApplication}
               />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>Tech Interview?</label>
               <Checkbox
+                name="techInterview"
                 inputProps={{
                   "aria-label": "Did you do a Tech Interview?",
                 }}
+                onChange={setFormApplication}
               />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>3rd Interview?</label>
               <Checkbox
+                name="interview3"
                 inputProps={{
                   "aria-label": "Did you have a 3rd Interview?",
                 }}
+                onChange={setFormApplication}
               />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>4th Interview?</label>
               <Checkbox
+                name="interview4"
                 inputProps={{
                   "aria-label": "Did you have a 4rd Interview?",
                 }}
+                onChange={setFormApplication}
               />
             </FormFieldGenerator>
             <FormFieldGenerator width="14%">
               <label>Job Offer?</label>
               <Checkbox
+                name="jobOffered"
                 inputProps={{
                   "aria-label": "Did you receive a Job Offer?",
                 }}
+                onChange={setFormApplication}
               />
             </FormFieldGenerator>
           </Stack>
@@ -199,7 +280,7 @@ function ApplicaionModal({ isOpen, isEdit, setIsOpen }: ApplicationModalProps) {
             Cancel
           </Button>
           <Button
-            onClick={() => {}}
+            onClick={saveApplication}
             color={isEdit ? "warning" : "success"}
             variant="contained"
             role="submit"

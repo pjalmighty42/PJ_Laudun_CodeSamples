@@ -4,11 +4,10 @@ interface RoleInterface {
   url: string;
 }
 
-export default interface ApplicationInterface {
+interface ApplicationBaseInterface {
   id: string;
   companyName: string;
   dateApplied: string;
-  role: RoleInterface;
   status: string;
   submittedResume: boolean;
   resumeViewed: boolean;
@@ -18,3 +17,20 @@ export default interface ApplicationInterface {
   interview4: boolean;
   jobOffered: boolean;
 }
+
+interface ApplicationInterface {
+  id: string;
+  companyName: string;
+  dateApplied: string;
+  status: string;
+  role: RoleInterface;
+  submittedResume: boolean;
+  resumeViewed: boolean;
+  contacted1stCall: boolean;
+  techInterview: boolean;
+  interview3: boolean;
+  interview4: boolean;
+  jobOffered: boolean;
+}
+
+export type { ApplicationBaseInterface, RoleInterface, ApplicationInterface };

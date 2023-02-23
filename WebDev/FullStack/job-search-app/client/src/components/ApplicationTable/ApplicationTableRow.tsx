@@ -12,7 +12,7 @@ import {
 import { EditTwoTone, DeleteTwoTone } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { orange, amber, deepOrange, red } from "@mui/material/colors";
-import ApplicationInterface from "../../interfaces/ApplicationInterfaces";
+import { ApplicationInterface } from "../../interfaces/ApplicationInterfaces";
 
 import ApplicationModal from "../TableActions/ApplicationModal";
 import DeleteDialog from "../TableActions/DeleteDialog";
