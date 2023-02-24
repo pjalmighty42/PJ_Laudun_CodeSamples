@@ -32,10 +32,7 @@ function ApplicationTable() {
       {!loading && !error && (
         <Paper style={{ height: "100%", width: "100%" }}>
           <TableContainer>
-            <Table
-              aria-label="Current Job Applications Table"
-              data-testId="application-table"
-            >
+            <Table aria-label="Current Job Applications Table">
               <TableHead>
                 <TableRow>
                   <TableCell width="15%">Company Name</TableCell>
